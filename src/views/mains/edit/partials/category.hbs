@@ -1,0 +1,49 @@
+{{#ne dom 'chef cron'}}
+<div>
+  {{!-- ëxception for category where it would say category category --}}
+  <label for="category">{{#ne dom 'kanban'}}{{dom}}{{#ne dom 'category'}} category{{/ne}}{{/ne}}{{#eq dom 'kanban'}}Board{{/eq}}</label>
+  {{!-- label fix done --}}
+
+  {{#if data.category}} {{!-- EDIT --}}
+    {{#each data.category}}
+      <div class="right addPlus" id="categoryPlus">
+        <input
+          type="text"
+          id="category"
+          name="category"
+          list="categories"
+          value="{{name}}">
+
+        {{#ne ../dom 'flash category kanban'}}
+          <span class="plus icons shrinkedIcon"></span>
+            {{#if @first}}
+            <span class="icons shrinkedIcon"></span>
+          {{/if}}
+          {{#unless @first}}
+          <span class="minus icons shrinkedIcon"></span>
+          {{/unless}}
+        {{/ne}}
+      </div>
+    {{/each}}
+  {{else}} {{!-- ADD --}}
+  {{!-- don't remove addPlus completely, it's what styles pluses --}}
+    <div class="right
+    {{#ne dom 'flash category kanban item'}}addPlus{{/ne}}
+    " id="categoryPlus">
+      <input
+        type="text"
+        id="category"
+        name="category"
+        list="categories"
+        {{#eq dom 'kanban'}}
+        value="{{main.name}}"
+        {{/eq}}>
+      {{#ne dom 'flash category kanban item'}}
+      <span class="plus icons shrinkedIcon"></span>
+      <span class=" icons shrinkedIcon"></span>
+      {{/ne}}
+    </div>
+  {{/if}}
+  
+</div>
+{{/ne}}

@@ -1,0 +1,85 @@
+{{#eq dom 'recipe secondary'}}
+  {{#if data.steps}}
+  <section class="recipeSteps relativize topBorder bump6">
+    <h2>Steps</h2>
+
+    <div class="allSteps">
+      {{#each data.steps}}
+        <div class="singleStep" id="{{_id}}" data-step="{{inc @index}}">
+          {{!-- #region: STEP TITLE --}}
+          <div class="stepTitle">
+            <div class="stepOrder" id="step{{inc @index}}">
+            Step <span class="relativize">
+              <span class="number">{{inc @index}}</span>
+            </span>:
+            </div>
+            <div class="stepName">
+              {{name}}
+            </div>
+          </div>
+
+          {{!-- #endregion --}}
+
+          <main class="splitMain">
+            <div class="stepIntro">
+              {{#each range}}
+                {{#if duration}}
+                  <button class="clock icons shrinkedIcon recipeAlert">
+                    <span class="time" data-order="{{#if max}}1{{else}}0{{/if}}">{{duration}}</span>&nbsp;<span class="unit"> {{units.name}}s</span>
+                  </button>
+                {{/if}}
+              {{/each}}
+
+              {{#if temperatureI}}<p>Internal T: {{temperatureI}}°C</p>{{/if}}
+              {{#if temperatureS}}Cooking T: {{temperatureS}}°C</p>{{/if}}
+            </div>
+
+            <div class="stepMainPart">
+              {{#each elements}}
+                <div class="singleElement">
+                  <div class="alignRight">
+                    {{#eq elementRef 'Action'}}
+                      <div class="stepSpliter stepMethod">
+                        {{name}}
+                      </div>
+                      <div class="recipeIcons {{picture}}"></div>
+                    {{/eq}}
+                  </div>
+
+                  <div class="alignLeft">
+                    {{#eq elementRef 'Step'}}
+                      <div class="stepSpliter stepReference" data-find="{{element}}">
+                        <a href="" class="relativize">
+                          <span class="stepRef number"></span>
+                          <span class="insertStepName box pinkBorder"></span>
+                        </a>
+                      </div>
+                    {{/eq}}
+  
+                    {{#eq elementRef 'Food'}}
+                      <div class="stepSpliter">
+                        <div class="stepIngrPic">
+                          <img src="{{picture}}" alt="{{name}}" style="width: 4rem;" loading="lazy">
+                        </div>
+                        <div class="stepIngrName">
+                          {{name}}
+                        </div>
+                      </div>
+                    {{/eq}}
+                  </div>
+                </div>
+              {{/each}}
+            </div>
+          </main>
+
+          {{#if stepNotes}}
+            <div class="showStepNotes">
+              {{stepNotes}}
+            </div>
+          {{/if}}
+        </div>
+      {{/each}}
+    </div>
+  </section>
+{{/if}}
+{{/eq}}

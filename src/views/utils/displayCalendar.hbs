@@ -1,0 +1,75 @@
+{{#eq dom 'diary'}}
+  <div class="calGrid">
+    <div class="calendar">{{> components/calendar}}</div>
+
+    {{#each data}}
+      {{#eq variety.name 'stool'}}
+        <div class="stoolCard box" style="border-color: {{stool.color}};" data-time="{{time}}">
+          <p class="cardName">{{date}}</p>
+          <div>
+            <img src="/imgs/diary/{{inc stool.shape}}.png" alt="shape">
+          </div>
+          <div class="columnar">
+            <div class="hardness">
+              <div class="barWrapper">
+                <div class="bar" style="grid-row: -1 / -{{inc stool.hardness}};">
+                  {{inc stool.hardness}}
+                </div>
+              </div>
+              <p>H: </p>
+            </div>
+            <div class="quantity">
+              <div class="barWrapper">
+                <div class="bar" style="grid-row: -1 / -{{inc stool.quantity}};">
+                  {{inc stool.quantity}}
+                </div>
+              </div>
+              <p>Q: </p>
+            </div>
+            <div class="satisfaction">
+              <div class="barWrapper">
+                <div class="bar" style="grid-row: -1 / -{{inc stool.satisfaction}};">
+                  {{inc stool.satisfaction}}
+                </div>
+              </div>
+              <p>S: </p>
+            </div>
+          </div>
+        </div>
+      {{/eq}}
+
+      {{#eq variety.name 'period' data-time="{{time}}"}}
+        <div class="periodCard box pinkBorder">
+          <p class="cardName">{{date}}</p>
+          <div>
+            <img src="/imgs/diary/fallen-to-the-communists.png" alt="">
+          </div>
+        </div>
+      {{/eq}}
+
+{{!-- link to recie itself or page of the calendar entry... --}}
+      {{#eq variety.name 'fooddiary'}}
+        <div class="foodCard box blueBorder" data-time="{{time}}">
+          <p class="cardName">{{date}} {{food.name}}</p>
+          <div>
+            <a href="/{{food.variety}}/show/{{food._id}}">
+              <img src="{{food.picture}}" alt="food">
+            </a>
+          </div>
+        </div>
+      {{/eq}}
+
+      {{#eq variety.name 'story' data-time="{{time}}"}}
+      <a href="/{{variety.name}}/show/{{_id}}">
+        <div class="storyCard box greenBorder">
+          <div class="relativize">
+            <p class="cardName">{{date}}</p>
+            <img src="/imgs/diary/fidel.png" alt="">
+            <div class="fullEntry">{{notes}}</div>
+          </div>
+        </div>
+      </a>
+      {{/eq}}
+    {{/each}}
+  </div>
+{{/eq}}

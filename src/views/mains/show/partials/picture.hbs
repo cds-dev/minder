@@ -1,0 +1,22 @@
+<div class="titleImage relativize {{#if data.icon}}mainPIcon {{data.picture}}{{/if}}">
+  {{#if data.icon}}{{else}}
+    <img src="{{data.picture}}" alt="{{data.name}}" loading="lazy">
+  {{/if}}
+
+  {{#if data.cook.name}}
+    <div class="cookPic">
+      <a href="/show/chef/{{data.cook._id}}"><img src="{{data.cook.picture}}" alt="{{data.cook.name}}" loading="lazy"></a>
+    </div>
+  {{/if}}
+
+
+
+  {{#if data.number}}
+    <p class="number">{{data.number}}</p>
+  {{/if}}
+
+
+  {{#if data.status}}
+    <p class="mainStatus icons {{data.status.picture}}"></p>
+  {{/if}}
+</div>

@@ -1,0 +1,7 @@
+{{#ne dom 'chef'}}
+  {{#if data.category}}
+    ({{#each data.category}}{{!-- -------------1--}}<a href="/list/{{../dom}}/{{name}}">{{!--  ---}}{{name}}{{!--  -------------------------------}}</a>{{!--  -----------------------------------}}{{#unless @last}}, {{/unless}}{{!--  ---------}}{{/each}}{{!--  ---------------------------1--}}{{!------------------------------- birthday --}}{{#eq dom 'people'}}{{!-------------------- --}}<span class="formatDate" data-date="{{data.birthday}}">{{!-- ----------------------------}}</span>{{/eq}}{{!--  -------------------------}}{{!--  ----------------------------- status --}}{{#eq dom 'kanban'}}{{data.status.name}}{{/eq}})
+  {{/if}}
+{{/ne}}{{!--  --------------------------------}}
+
+{{#eq dom 'story diary stool period measures bio foods'}}({{data.date}}){{/eq}}

@@ -1,0 +1,184 @@
+{{#eq dom 'recipe ingredient chef'}}
+<fieldset>
+  <legend>Related</legend>
+
+  <div class="splitInHalf">
+  {{#eq dom 'recipe ingredient'}}
+    <div class="right variantInput secondThis">
+      <label for="variant">variant</label>
+
+      {{#if data.related}}
+        {{#each data.related}}
+          {{#eq category 'variant'}}
+            <div class="addPlus" id="varPlus">
+              <input type="text" id="variant" name="variant" value="{{item.name}}" list="foods" data-id="{{item._id}}">
+
+              <span class="plus icons shrinkedIcon"></span>
+              {{#if @first}}
+                <span class="icons shrinkedIcon"></span>
+              {{else}}
+                <span class="minus icons shrinkedIcon"></span>
+              {{/if}}
+            </div>
+          {{/eq}}
+          
+        {{/each}}
+      {{else}}
+        <div class="addPlus" id="varPlus">
+          <input type="text" id="variant" name="variant" list="foods">
+
+          <span class="plus icons shrinkedIcon"></span>
+          <span class="icons shrinkedIcon"></span>
+        </div>
+      {{/if}}
+    </div>
+
+    <div class="right pairInput secondThis">
+      <label for="pair">pair with</label>
+
+      {{#if data.related}}
+
+        {{#each data.related}}
+          {{#eq category 'pair'}}
+            <div class="addPlus" id="pairPlus">
+              <input type="text" id="pair" name="pair" value="{{item.name}}" list="foods">
+
+              <span class="plus icons shrinkedIcon"></span>
+              {{#if @first}}
+                <span class="icons shrinkedIcon"></span>
+              {{else}}
+                <span class="minus icons shrinkedIcon"></span>
+              {{/if}}
+            </div>
+          {{/eq}}
+        {{/each}}
+      {{else}}
+        <div class="addPlus" id="pairPlus">
+          <input type="text" id="pair" name="pair" list="foods">
+
+          <span class="plus icons shrinkedIcon"></span>
+          <span class="icons shrinkedIcon"></span>
+        </div>
+      {{/if}}
+    </div>
+
+    <div class="right relatedInput secondThis">
+      <label for="related">related</label>
+
+      {{#if data.related}}
+        {{#each data.related}}
+          {{#eq category 'related'}}
+            <div class="addPlus" id="varPlus">
+              <input type="text" id="related" name="related" value="{{item.name}}" list="foods">
+
+              <span class="plus icons shrinkedIcon"></span>
+              {{#if @first}}
+                <span class="icons shrinkedIcon"></span>
+              {{/if}}
+              {{#unless @first}}
+                <span class="minus icons shrinkedIcon"></span>
+              {{/unless}}
+            </div>
+          {{/eq}}
+        {{/each}}
+      {{else}}
+        <div class="addPlus" id="varPlus">
+          <input type="text" id="related" name="related" list="foods">
+
+          <span class="plus icons shrinkedIcon"></span>
+          <span class="icons shrinkedIcon"></span>
+        </div>
+      {{/if}}
+    </div>
+
+    <div class="right substituteInput secondThis">
+      <label for="substitute">substitute</label>
+
+      {{#if data.related}}
+        {{#each data.related}}
+          {{#eq category 'substitute'}}
+            <div class="addPlus" id="pairPlus">
+              <input type="text" id="substitute" name="substitute" value="{{item.name}}" list="foods">
+
+              <span class="plus icons shrinkedIcon"></span>
+              {{#if @first}}
+                <span class="icons shrinkedIcon"></span>
+              {{else}}
+                <span class="minus icons shrinkedIcon"></span>
+              {{/if}}
+            </div>
+          {{/eq}}
+        {{/each}}
+      {{else}}
+        <div class="addPlus" id="pairPlus">
+          <input type="text" id="substitute" name="substitute" list="foods">
+
+          <span class="plus icons shrinkedIcon"></span>
+          <span class="icons shrinkedIcon"></span>
+        </div>
+      {{/if}}
+    </div>
+  {{/eq}}
+
+  {{#eq dom 'chef'}}
+    <div class="right">
+      <label for="colleagues">colleagues</label>
+
+      {{#if data.related}}
+      {{#each data.related}}
+      {{#eq category 'colleague'}}
+        <div class="addPlus" id="colleagues">
+          <input type="text" id="colleagues" name="colleagues" list="cooks" value="{{item.name}}">
+
+          <span class="plus icons shrinkedIcon"></span>
+          {{#if @first}}
+                <span class="icons shrinkedIcon"></span>
+              {{/if}}
+              {{#unless @first}}
+                <span class="minus icons shrinkedIcon"></span>
+              {{/unless}}
+        </div>
+      {{/eq}}
+      {{/each}}
+      {{else}}
+        <div class="addPlus" id="colleagues">
+          <input type="text" id="colleagues" name="colleagues" list="cooks">
+
+          <span class="plus icons shrinkedIcon"></span>
+          <span class="icons shrinkedIcon"></span>
+        </div>
+      {{/if}}
+    </div>
+
+    <div class="right">
+      <label for="organization">organization</label>
+
+      {{#if data.related}}
+      {{#each data.related}}
+      {{#eq category 'organization'}}
+        <div class="addPlus" id="organization">
+          <input type="text" id="organization" name="organization" list="cooks" value="{{item.name}}">
+
+          <span class="plus icons shrinkedIcon"></span>
+          {{#if @first}}
+                <span class="icons shrinkedIcon"></span>
+              {{/if}}
+              {{#unless @first}}
+                <span class="minus icons shrinkedIcon"></span>
+              {{/unless}}
+        </div>
+      {{/eq}}
+      {{/each}}
+      {{else}}
+        <div class="addPlus" id="organization">
+          <input type="text" id="organization" name="organization" list="cooks">
+
+          <span class="plus icons shrinkedIcon"></span>
+          <span class="icons shrinkedIcon"></span>
+        </div>
+      {{/if}}
+    </div>
+  {{/eq}}
+  </div>
+</fieldset>
+{{/eq}}

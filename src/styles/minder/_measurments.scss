@@ -1,0 +1,113 @@
+@use "../fonts/fonts" as f;
+@use "../general/colors" as c;
+@use "../general/mixins" as *;
+
+.modalContainer {
+  width: 100cqw;
+  height: 100cqh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  background: c.$pinka;
+  padding-block: 1rem;
+}
+
+.measurmentsWrapper {
+  position: fixed;
+//   left: calc(50vh - 250px);
+  position: relative;
+  border: 1px solid c.$pink;
+  height: calc(100vh - 4rem);
+  padding: 1rem;
+
+  input[type="number"] {
+    width: 26%;
+    position: absolute;
+    text-align: center;
+//     // hides arrows from number inputs
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+//       margin: 0;
+    }
+  }
+
+  .measImage {
+//     // width: fit-content;
+//     // display: block;
+
+    img {
+      height: calc(100vh - 4rem);
+      display: block;
+      width: auto;
+      margin: auto;
+    }
+  }
+
+  .measurmentsModal {
+    position: absolute;
+    inset: 0;
+//     top: 0;
+  }
+
+
+//   .measurments input {
+//     position: absolute;
+//     width: fit-content;
+
+//     &[type="submit"] {
+//       border-radius: 50%;
+//       bottom: 7rem;
+//       left: 24.7rem;
+//       width: 4.7rem;
+//     }
+//   }
+
+  #weight {
+    top: 10%;
+    left: 46%;
+    width: 11%;
+  }
+
+  #arm {
+    top: 23.5%;
+    left: 70%;
+    width: 11%;
+  }
+
+  #chest {
+    top: 30%;
+    left: 39%;
+  }
+
+  #waist {
+    left: 39%;
+    top: 40%;
+  }
+
+  #hhip {
+    left: 39%;
+    top: 46%;
+  }
+
+  #lhip {
+    left: 39%;
+    top: 52%;
+  }
+
+  #leg {
+    left: 38%;
+    top: 65%;
+    width: 6%;
+  }
+
+  input[type="submit"] {
+    position: absolute;
+    background: c.$lazyLoad;
+    right: 1rem;
+    bottom: 1rem;
+  }
+}

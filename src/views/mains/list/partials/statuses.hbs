@@ -1,0 +1,14 @@
+{{#eq dom 'kanban item monitor'}}
+  <div class="statusMenu">
+    {{#each statuses}}
+      <form action="" method="POST" title="{{name}}">
+        {{#eq name 'progress active'}}
+          <span class="greenDot"></span>
+        {{/eq}}
+        <button class="icons {{picture}}" data-id="{{_id}}"></button>
+        <span class="number">{{number}}</span>
+      </form>
+      
+    {{/each}}
+  </div>
+{{/eq}}

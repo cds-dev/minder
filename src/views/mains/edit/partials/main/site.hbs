@@ -1,0 +1,8 @@
+{{!-- THISIS: SITE --}}
+{{#ne dom 'flash category technique shopping'}}
+  <div class="right siteInput secondThis">
+    <label for="site">{{#ne dom 'kanban'}}{{dom}} {{/ne}}URL</label>
+
+    <input type="url" id="site" name="site" value="{{data.site}}">
+  </div>
+{{/ne}}

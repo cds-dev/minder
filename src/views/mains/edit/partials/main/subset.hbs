@@ -1,0 +1,8 @@
+{{!-- THISIS: SUBSET OF --}}
+{{#eq dom 'recipe ingredient'}}
+  <div class="right subsetInput secondThis">
+    <label for="sub">Subset of</label>
+
+    <input type="text" id="sub" name="sub" value="{{#each data.related}}{{#eq category 'sub'}}{{item.name}}{{/eq}}{{/each}}" list="foods">
+  </div>
+{{/eq}}

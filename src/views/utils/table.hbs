@@ -1,0 +1,35 @@
+<h1>{{dom}}</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>date</th>
+      {{#eq dom 'measurments'}}
+        <th>Weight</th>
+        <th>Arm</th>
+        <th>Chest</th>
+        <th>Waist</th>
+        <th>Upper hip</th>
+        <th>Lower hip</th>
+        <th>Leg</th>
+      {{/eq}}
+    </tr>
+  </thead>
+  <tbody>
+    {{#each data}}
+      <tr>
+        <td>{{date}}</td>
+        {{#eq ../dom 'measurments'}}
+            <td>{{measurments.weight}}</td>
+            <td>{{measurments.arm}}</td>
+            <td>{{measurments.chest}}</td>
+            <td>{{measurments.waist}}</td>
+            <td>{{measurments.hhip}}</td>
+            <td>{{measurments.lhip}}</td>
+            <td>{{measurments.leg}}</td>
+        {{/eq}}
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+

@@ -1,0 +1,77 @@
+@use "../fonts/fonts" as f;
+@use "../general/colors" as c;
+@use "../general/mixins" as *;
+
+
+.studySession {
+  margin-top: 7rem;
+
+
+  .flashCard {
+    //@include border;
+    // position: relative;
+  }
+
+  .flashQestion {
+    display: grid;
+    // position: relative;
+    grid-template-columns: 1fr 20rem;
+    gap: 1rem;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .flashPic img {
+    display: inline-block;
+    width: 20rem;
+  }
+
+  .flashQuestion {
+    width: fit-content;
+    @include border;
+    border-width: .1rem;
+    padding: 4rem;
+    border-radius: .3rem;
+    background: c.$lazyLoad;
+  }
+
+  .showanswer {
+    position: absolute;
+    right: 3rem;
+    bottom: 3rem;
+  }
+
+  .showanswer, .shownext {
+    button:disabled {
+      border-color: #bd9ea4;
+    }
+  }
+
+
+  .answerMe {
+    @include border;
+    border-width: .1rem;
+    width: fit-content;
+    padding: 4rem;
+    background: c.$lazyLoad;
+    margin: auto;
+    margin-top: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .controls {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-top: 4rem;
+    margin-bottom: -2rem;
+  }
+
+  .grade {
+    font-size: 3rem;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+  }
+}

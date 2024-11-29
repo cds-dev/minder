@@ -1,0 +1,30 @@
+{{#eq dom 'monitor'}}
+  <div>
+    <div class="labelify">Keep this reminder for</div>
+    <div class="quickTimeWrapper keepFor" data-keepFor="{{data.keepFor}}">
+      <div class="selectTimeRange">
+        <input type="checkbox" name="timeRange" id="day1">
+        <label class="nAfter timeCards box number" for="day1">1</label>
+      </div>
+      <div class="selectTimeRange">
+        <input type="checkbox" name="timeRange" id="day2">
+        <label class="nAfter timeCards box" for="day2">2</label>
+      </div>
+      <div class="selectTimeRange">
+        <input type="checkbox" name="timeRange" id="day4">
+        <label class="nAfter timeCards box" for="day4">4</label>
+      </div>
+      <div class="selectTimeRange">
+        <input type="checkbox" name="timeRange" id="day8">
+        <label class="nAfter timeCards box" for="day8">8</label>
+      </div>
+      <div class="selectTimeRange">
+        <input type="checkbox" name="timeRange" id="day16">
+        <label class="nAfter timeCards box" for="day16">16</label>
+      </div>
+      <div class="numberify">
+        days
+      </div>
+    </div>
+  </div>
+{{/eq}}

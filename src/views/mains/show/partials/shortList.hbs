@@ -1,0 +1,14 @@
+{{#eq dom 'ingredient chef store item shopping technique'}}
+{{#if items}}
+  <div class="shortList">
+    {{#each items}}
+      <a href="{{url}}" {{#eq ../dom 'item'}}target="_blank"{{/eq}}>
+        <div class="itemCard">
+          <img src="{{picture}}" alt="{{name}}" style="width: 10rem; height: 10rem;">
+          <div>{{name}} {{#if number}}({{number}}){{/if}}</div>
+        </div>
+      </a>
+    {{/each}}
+  </div>
+{{/if}}
+{{/eq}}

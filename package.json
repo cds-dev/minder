@@ -1,0 +1,48 @@
+{
+  "name": "alarminder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "env-cmd nodemon --expose-gc --trace-warnings src/app.js -e js,hbs,scss,css",
+    "sass": "sass --watch src/styles/style.scss:src/styles/style.css --style compressed",
+    "mongo": "md mongo-db & \"C:/Program Files/MongoDB/Server/4.4/bin/mongod.exe\" --dbpath=c:/Projects/MongoDB-data",
+    "test": "npm run start && npm run mongo"
+  },
+  "keywords": [],
+  "author": "ČĎŠ",
+  "license": "ISC",
+  "dependencies": {
+    "@msgpack/msgpack": "^3.0.0-beta2",
+    "agent-base": "^7.1.0",
+    "axios": "^1.6.7",
+    "compression": "^1.7.4",
+    "connect-mongo": "^4.6.0",
+    "cors": "^2.8.5",
+    "diff": "^5.2.0",
+    "express": "^4.18.2",
+    "express-csp-header": "^5.1.0",
+    "express-session": "^1.18.1",
+    "hbs": "^4.2.0",
+    "helmet": "^6.0.1",
+    "https-proxy-agent": "^7.0.4",
+    "mongodb": "^4.12.1",
+    "mongoose": "^8.4.5",
+    "msgpack-lite": "^0.1.26",
+    "multer": "^1.4.5-lts.1",
+    "node-aplay": "^1.0.3",
+    "node-cache": "^5.1.2",
+    "node-cron": "^3.0.3",
+    "play-sound": "^1.1.5",
+    "proxy-agent": "^6.4.0",
+    "puppeteer": "^22.4.0",
+    "sass": "^1.56.1",
+    "sharp": "^0.33.5",
+    "socks-proxy-agent": "^8.0.2",
+    "unorm": "^1.6.0"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "nodemon": "^3.0.1"
+  }
+}

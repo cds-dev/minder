@@ -1,0 +1,37 @@
+<div>
+  <nav class="mainNav">
+    {{> navs/main}}
+
+    {{> navs/back}}
+  </nav>
+
+  <section class="erase eraserecipe relativize">
+    <h1 class="colorPink" id="{{data._id}}" data-dom="{{dom}}">WARNING!</h1>
+    <div class="pinkBorder box dltWarning">
+      <p>
+        You are about to delete <span class="deleteName">"{{data.name}}"</span> {{dom}}. This action can not be undone. Are you sure you want to proceed?
+      </p>
+
+
+      <div class="splitInHalf bump6">
+        <div>
+          <a href="/show/{{dom}}/{{data._id}}">
+            {{#if data.icon}}
+            <span class="icons {{data.picture}}"></span>
+            {{else}}
+            <img src="{{data.picture}}" alt="{{data.name}}">
+            {{/if}}
+          </a>
+        </div>
+
+
+        <div>
+          <span class="icons delete"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<script src="/front/delete.js" defer type="module"></script>

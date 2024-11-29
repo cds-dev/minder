@@ -1,0 +1,14 @@
+{{#eq dom 'diary'}}
+  <form action="/diary/submit/food" method="post" class="fooddiary right qdiary">
+    <fieldset>
+      <input type="text" id="fooddiary" name="fooddiary" list="recipes" placeholder="I ate...">
+      <datalist id="recipes">
+        {{#each recipes}}
+          <option value="{{name}}">{{name}}</option>
+        {{/each}}
+      </datalist>
+    </fieldset>
+
+    <button type="submit" class="icons shrinkedIran pork piggyBtn"></button>
+  </form>
+{{/eq}}

@@ -1,0 +1,86 @@
+<section class="miscellaneous">
+  {{#if data.site}}
+    <a href="{{data.site}}" target="_blank" title="Visit page">
+      <div class="ahead link"></div>
+    </a>
+  {{/if}}
+
+  {{#eq dom 'recipe secondary store monitor kanban'}}
+    {{#eq dom 'recipe'}}
+      {{#if data.cuisine.name}}
+        <div class="ahead locate" title="Cuisine">
+          <a href="/recipe/{{data.cuisine.name}}">
+            {{data.cuisine.name}} cuisine
+          </a>
+        </div>
+      {{else}}
+        <div class="ahead locate" title="Cuisine">
+          <a href="/recipe/cuisineless/">No cuisine</a>
+        </div>
+      {{/if}}
+
+      {{#if data.season.name}}
+        <div class="ahead salt" title="Season"> {{data.season.name}}</div>
+      {{/if}}
+
+      {{#co data.myExperience.name "yet to try"}}
+        <div class="ahead yetToTry rating" title="Yet to try"></div>
+      {{/co}}
+
+      {{#co data.myExperience.name "on the fence"}}
+        <div class="ahead onTheFence rating" title="On the fence"></div>
+      {{/co}}
+
+      {{#co data.myExperience.name "definitive repeat"}}
+        <div class="ahead definitveRepeat rating" title="Definitive repeat"></div>
+      {{/co}}
+
+      {{#co data.myExperience.name "avoid"}}
+        <div class="ahead avoid rating" title="Avoid"></div>
+      {{/co}}
+
+      <div class="rotation" title="Suggest this">
+        <form method="post" id="{{data._id}}" class="suggestion">
+          <input
+            class="hide"
+            type="checkbox"
+            name="rotation"
+            id="rotation"
+            {{#if data.rotation}}
+              checked
+            {{/if}}>
+
+          <label for="rotation" class="checkBox nAfter"></label>
+        </form>
+      </div>
+
+      <div title="Made it">
+        <form method="post" id="{{data._id}}" class="madeit">
+          <button type="submit" class="shrinkedIcon madeIt" name="number" id="number"></button>
+        </form>
+      </div>
+
+      {{#if data.keep}}
+        {{#each data.keep}}
+          {{#if for}}
+            <div class="ahead {{at.picture}}">{{for}}</div>
+          {{/if}}
+        {{/each}}
+      {{/if}}
+    {{/eq}}
+  {{/eq}}
+
+{{#if data.backlink}}
+  <a href="{{data.backlink}}"><span class="ahead {{#eq dom 'ingredient'}}shop{{/eq}} {{#eq dom 'item'}}ingredients{{/eq}}"></span></a>
+{{/if}}
+
+{{#eq dom 'ingredient'}}
+  {{#if data.conversion}}
+    <div class="ahead measuringcup">{{data.conversion.quantity}} {{data.conversion.unit}}</div>
+  {{/if}}
+  <div class="splitIn3rds colorGreen">
+    <span>add to reminders</span>
+    <span>both recipes and stores would compete over short list... </span>
+  </div>
+{{/eq}}
+</section>

@@ -1,0 +1,174 @@
+@use "../fonts/fonts" as f;
+@use "../general/colors" as c;
+@use "../general/mixins" as *;
+
+.modify {
+  margin-top: 7rem;
+
+  .camera {
+    display: none;
+
+    video {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .capture {
+      z-index: 3;
+      position: relative;
+    }
+  }
+
+  h1 {
+    @include border;
+    background-color: c.$lazyLoad;
+    width: max-content;
+    padding: 1rem;
+    position: relative;
+    top: -5rem;
+    margin-bottom: -3rem;
+    margin-top: 3.7rem;
+    color: c.$pink;
+  }
+
+  .shownMenu .icons.iconImage {
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+      border: none;
+    }
+  }
+
+  .miscellaneous {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .wrongInput {
+    border-color: #dc143c;
+  }
+
+  .myExperience {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    label {
+      width: 4.4rem;
+
+      &::before {
+        background: c.$lazyLoad;
+      }
+    }
+
+    input[type="radio"]:checked + label {
+      color: c.$pink;
+      border-color: c.$pink;
+    }
+  }
+
+  .keepAt {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
+    div {
+      display: grid;
+      grid-template-columns: 3rem 1fr;
+      margin-top: 1rem;
+    }
+
+    label::before {
+      margin-left: -.8rem;
+      margin-top: -1.2rem;
+    }
+  }
+
+  .sugestWrapper {
+    position: relative;
+    top: 2.2rem;
+  }
+
+  .timeUnitWrapper {
+    display: grid;
+    grid-template-columns: auto repeat(8, 1fr);
+    gap: .5rem;
+    align-items: center;
+
+    .timeUnits {
+      @include border;
+      cursor: pointer;
+      padding: 0;
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: c.$lazyLoad;
+      margin-left: 1rem;
+    }
+
+    
+  }
+
+  .selectedUnit {
+    color: c.$pink;
+  }
+
+  .stepOrder {
+    margin-top: 2rem;
+    background: c.$lazyLoad;
+    padding: .5rem;
+    margin-right: 4rem;
+  }
+
+  .cloneSteps {
+    background: c.$lazyLoad;
+    top: 2rem;
+    right: 1rem;
+  }
+
+  .substep {
+    display: grid;
+    grid-template-columns: 4fr 2fr 2fr 1fr 1fr;
+    gap: 2rem;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  #positional {
+    margin-block: 1rem;
+    padding: 1rem;
+    background-image: linear-gradient(to top, #000a, #93155612);
+    border-top: solid 1rem #dc143c;
+    border-image: linear-gradient(to top, #f4aa7d, #dc143c) 260;
+  }
+}
+
+.shrinkedIcon {
+  top: 0;
+  margin-left: 0;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  display: none;
+}
+
+.modifyingredient {
+  .cookInput, .siteInput, .miscellaneous, .stepsWrapper, .keepInput, .variantInput, .pairInput {
+    display: none;
+  }
+}
+
+
+.modifyrecipe {
+  .subsetInput, .relatedInput, .substituteInput, .shoppingInput {
+    display: none;
+  }
+}

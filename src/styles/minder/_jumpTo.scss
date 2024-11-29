@@ -1,0 +1,38 @@
+@use "../fonts/fonts" as f;
+@use "../general/colors" as c;
+@use "../general/mixins" as *;
+
+.jumpTo {
+  position: fixed;
+  z-index: 1;
+  bottom: 2rem;
+  left: .1rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.stepJump {
+  @include border;
+  border-color: c.$pink;
+  background: c.$lazyLoad;
+  margin-top: .5rem;
+  width: 0rem;
+  height: 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.showtitle {
+  background-color: c.$black;
+  color: c.$pink;
+  height: 2rem;
+  width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: .75rem;
+  margin-left: 1rem;
+  visibility: hidden;
+}

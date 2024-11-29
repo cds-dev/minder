@@ -1,0 +1,31 @@
+<fieldset class="mainForm">
+  <div class="splitInHalf">
+    {{> mains/edit/partials/main/name}}
+    {{> mains/edit/partials/main/picture}}
+
+    {{!-- half width --}}
+    {{#ne dom 'kanban chef store item minder'}}
+      {{> mains/edit/partials/main/site}}
+    {{/ne}}
+    {{> mains/edit/partials/main/cook}}
+    {{> mains/edit/partials/main/birthday}}
+    {{> mains/edit/partials/main/tag}}
+    {{> mains/edit/partials/main/subset}}
+    {{> mains/edit/partials/main/protein30}}
+  </div>
+
+  {{!-- full width --}}
+  {{#eq dom 'kanban chef store item minder'}}
+    {{> mains/edit/partials/main/site}}
+  {{/eq}}
+
+  {{#eq dom 'minder'}}
+    <div class="splitInHalf">
+      {{> mains/edit/partials/main/minders}}
+    </div>
+  {{/eq}}
+
+  {{> mains/edit/partials/main/repeat}}
+
+  {{> mains/edit/partials/category}}
+</fieldset>

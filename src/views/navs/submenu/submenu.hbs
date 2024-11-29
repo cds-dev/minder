@@ -1,0 +1,21 @@
+{{#eq dom 'kanban flash store recipe ingredient technique note monitor'}}
+  <nav class="submenu">
+    <a href="/list/{{dom}}/" title="all" data-id="{{_id}}">
+      <span class="icons shrinkedIcon box blueBorder colorBlue filter"></span>
+    </a>
+
+    {{#each submenu}}
+      {{#ne name 'politics'}}
+      <a href="/list/{{../dom}}/{{#ne ../dom 'kanban'}}{{name}}{{/ne}}{{#eq ../dom 'kanban'}}{{_id}}{{/eq}}" 
+      title="{{name}}"
+      data-id="{{_id}}"
+      {{#if sub}}
+        data-hidden="{{sub.name}}"
+        style="display: none;"
+      {{/if}}>
+        <span class="icons shrinkedIcon box pinkBorder colorPink {{picture}}"></span>
+      </a>
+      {{/ne}}
+    {{/each}}
+  </nav>
+{{/eq}}

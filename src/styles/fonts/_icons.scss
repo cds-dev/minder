@@ -1,0 +1,1930 @@
+@use "fonts" as *;
+@use "../general/colors" as c;
+@use "../general/mixins" as m;
+
+.icons::before {
+  font-family: minder;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  @include m.border;
+  border-width: 1px;
+  height: 2rem; // 2 * 2 rem
+}
+
+.shrinkedIcon::before {
+  border: none;
+  font-size: 2rem;
+  padding: 0;
+  
+}
+
+.shrinkedIcon {
+  width: 2rem;
+  height: 2rem;
+}
+
+// do not reorder this one!
+.active::before {
+  content: '\21c8';
+}
+
+.ahead::before {
+  font-family: minder;
+  font-size: 2rem;
+  color: c.$gold;
+}
+
+.shrinkedIcon.active {
+  border-color: c.$green !important;
+
+  &::before {
+    color: c.$green;
+  }
+}
+
+.recipeIcons::before {
+  font-family: minder;
+  font-size: 4rem;
+  background: c.$pink;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid c.$black .3rem;
+}
+
+.quarter::before {
+  content: '\00BC';
+}
+
+.half::before {
+  content: '\00BD';
+}
+
+.threeQ::before {
+  content: '\00BE';
+}
+
+.bubble::before {
+  content: '\2026';
+}
+
+.third::before {
+  content: '\2153';
+}
+
+.twothird::before {
+  content: '\2154';
+}
+
+.stove1::before {
+  content: '\2160';
+}
+
+.stove2::before {
+  content: '\2161';
+}
+
+.stove3::before {
+  content: '\2162';
+}
+
+.stove4::before {
+  content: '\2163';
+}
+
+.oven1::before {
+  content: '\2164';
+}
+
+.oven2::before {
+  content: '\2165';
+}
+
+.oven3::before {
+  content: '\2166';
+}
+
+.oven4::before {
+  content: '\2167';
+}
+
+.cook1::before {
+  content: '\2168';
+}
+
+.cook2::before {
+  content: '\2169';
+}
+
+.cook3::before {
+  content: '\216A';
+}
+
+.cook4::before {
+  content: '\216B';
+}
+
+.broil::before {
+  content: '\216C';
+}
+
+.panko::before {
+  content: '\2181';
+}
+
+.preheat::before {
+  content: '\219a';
+}
+
+.shelter::before {
+  content: '\219b';
+}
+
+.temperature::before {
+  content: '\219c';
+}
+
+.cool::before {
+  content: '\219d';
+}
+
+.roast::before {
+  content: '\219e';
+}
+
+.return::before {
+  content: '\21B2';
+}
+
+.remove::before {
+  content: '\21B3';
+}
+
+.directions::before {
+  content: '\21b9';
+}
+
+.reuse::before {
+  content: '\21ba';
+}
+
+.mix::before {
+  content: '\21bb';
+}
+
+.repeated::before {
+  content: '\21c3';
+}
+
+.memento::before {
+  content: '\21c4';
+}
+
+.consider::before {
+  content: '\21c5';
+}
+
+.gotten::before {
+  content: '\21c6';
+}
+
+.sold::before {
+  content: '\21c7';
+}
+
+
+
+.bought::before {
+  content: '\21ca';
+}
+
+.cart::before {
+  content: '\21cb';
+}
+
+.uncart::before {
+  content: '\21cc';
+}
+
+.bomb::before {
+  content: '\21d50';
+}
+
+.toast::before, .bread::before {
+  content: '\21d8';
+}
+
+.archive::before {
+  content: '\21d9';
+}
+
+.done::before {
+  content: '\21da';
+}
+
+.idea::before {
+  content: '\21db';
+}
+
+.progress::before {
+  content: '\21dc';
+}
+
+.today::before {
+  content: '\21dd';
+}
+
+.todo::before {
+  content: '\21de';
+}
+
+.urgent::before {
+  content: '\21df';
+}
+
+.testing::before {
+  content: '\21e0';
+}
+
+.churn::before {
+  content: '\21e1';
+}
+
+.doubleboil::before {
+  content: '\21e2';
+}
+
+.freeze::before {
+  content: '\21e3';
+}
+
+.onebyone::before {
+  content: '\21e4';
+}
+
+.showMore::before {
+  content: '\21e7';
+}
+
+.showNext::before {
+  content: '\21e8';
+}
+
+.showFewer::before {
+  content: '\21e9';
+}
+
+.people::before {
+  content: '\21ea';
+}
+
+.series::before {
+  content: '\21eb';
+}
+
+.price::before {
+  content: '\21ec';
+}
+
+.placeholder::before {
+  content: '\21ed';
+}
+
+.tin::before {
+  content: '\21ef';
+}
+
+.parchment::before {
+  content: '\21f0';
+}
+
+.paperTowel::before {
+  content: '\21f1';
+}
+
+.stretch::before {
+  content: '\21fc';
+}
+
+.annually::before {
+  content: '\21fe';
+}
+
+.monthly::before {
+  content: '\21ff';
+}
+
+.biweekly::before {
+  content: '\2200';
+}
+
+.weekly::before {
+  content: '\2201';
+}
+
+.daily::before {
+  content: '\2202';
+}
+
+.eightHours::before {
+  content: '\2203';
+}
+
+.sixHours::before {
+  content: '\2204';
+}
+
+.meds::before {
+  content: '\2205';
+}
+
+.weekdays::before {
+  content: '\2206';
+}
+
+.minus::before {
+  content: '\2212';
+}
+
+.plus::before {
+  content: '\2214';
+}
+
+.floret::before {
+  content: '\2217';
+}
+
+.filter::before {
+  content: '\221b';
+}
+
+.general::before {
+  content: '\221e';
+}
+
+.peel::before {
+  content: '\2221';
+}
+
+.bias::before {
+  content: '\2226';
+}
+
+.if::before {
+  content: '\2228';
+}
+
+.sheetTray::before {
+  content: '\2229';
+}
+
+.plate::before {
+  content: '\222A';
+}
+
+.bakingDish::before {
+  content: '\222B';
+}
+
+.bowl::before {
+  content: '\222C';
+}
+
+.breading::before {
+  content: '\222D';
+}
+
+.showoff::before {
+  content: '\222e';
+}
+
+.show::before {
+  content: '\222f';
+}
+
+.air::before {
+  content: '\2230';
+}
+
+.land::before {
+  content: '\2231';
+}
+
+.sea::before {
+  content: '\2232';
+}
+
+.showing::before {
+  content: '\2233';
+}
+
+.biteSized::before {
+  content: '\2234';
+}
+
+.alDente::before {
+  content: '\2235';
+}
+
+.blind::before {
+  content: '\2237';
+}
+
+.frog::before {
+  content: '\223A';
+}
+
+.aromatic::before {
+  content: '\2240';
+}
+
+.rinse::before {
+  content: '\2244';
+}
+
+.constantly::before {
+  content: '\2245';
+}
+
+.gradualy::before {
+  content: '\2246';
+}
+
+.lightly::before {
+  content: '\2247';
+}
+
+.season::before {
+  content: '\2248';
+}
+
+.coat::before {
+  content: '\2249';
+}
+
+.garnish::before {
+  content: '\224a';
+}
+
+.food::before {
+  content: '\224E';
+}
+
+.dish::before {
+  content: '\224F';
+}
+
+.cook::before {
+  content: '\2250';
+}
+
+.ingredients::before {
+  content: '\2251';
+}
+
+.dishplus::before {
+  content: '\2252';
+}
+
+.cookplus::before {
+  content: '\2253';
+}
+
+.ingrplus::before {
+  content: '\2254';
+}
+
+.scavenger::before {
+  content: '\2255';
+}
+
+.vulture::before {
+  content: '\2256';
+}
+
+.cheap::before {
+  content: '\225b';
+}
+
+.avoid::before {
+  content: '\225e';
+}
+
+.yetToTry::before {
+  content: '\225F';
+}
+
+.onTheFence::before {
+  content: '\2260';
+}
+
+.definitveRepeat::before {
+  content: '\2261';
+}
+
+.list::before {
+  content: '\2262';
+}
+
+.muffinTray::before {
+  content: '\2263';
+}
+
+.mindfull::before {
+  content: '\2264';
+}
+
+.tooth::before {
+  content: '\2268';
+}
+
+.baste::before {
+  content: '\2270';
+}
+
+.brine::before {
+  content: '\2271';
+}
+
+.debone::before {
+  content: '\2272';
+}
+
+.brown::before {
+  content: '\2273';
+}
+
+.cloche::before {
+  content: '\2274';
+}
+
+.balls::before {
+  content: '\2275';
+}
+
+.topping::before {
+  content: '\2276';
+}
+
+.soft::before {
+  content: '\2277';
+}
+
+.chop::before {
+  content: '\2278';
+}
+
+.slice::before {
+  content: '\2279';
+}
+
+.alt::before {
+  content: '\227a';
+}
+
+.online::before {
+  content: '\227b';
+}
+
+.mixed::before {
+  content: '\227c';
+}
+
+.bnm::before {
+  content: '\227d';
+}
+
+.melt::before {
+  content: '\227e';
+}
+
+.spreadIt::before {
+  content: '\227f';
+}
+
+.squeeze::before {
+  content: '\2280';
+}
+
+.until::before {
+  content: '\2281';
+}
+
+.zest::before {
+  content: '\2282';
+}
+
+.scoop::before {
+  content: '\2284';
+}
+
+.nape::before {
+  content: '\2285';
+}
+
+.saucePan::before {
+  content: '\228b';
+}
+
+.cakePan::before {
+  content: '\228c';
+}
+
+.wok::before {
+  content: '\228D';
+}
+
+.shower::before {
+  content: '\228E';
+}
+
+.kitchen::before {
+  content: '\228F';
+}
+
+.hallway::before {
+  content: '\2290';
+}
+
+.room::before {
+  content: '\2291';
+}
+
+.wardrobe::before {
+  content: '\2292';
+}
+
+.bathroom::before {
+  content: '\2293';
+}
+
+.balcony::before {
+  content: '\2294';
+}
+
+.bath::before {
+  content: '\2295';
+}
+
+.boil::before {
+  content: '\2296';
+}
+
+.beat::before {
+  content: '\2297';
+}
+
+.raid::before {
+  content: '\2298';
+}
+
+.whisk::before {
+  content: '\2299';
+}
+
+.tray::before {
+  content: '\229A';
+}
+
+.mixTogether::before {
+  content: '\229B';
+}
+
+.mix::before {
+  content: '\229C';
+}
+
+.cover::before {
+  content: '\229D';
+}
+
+.shop::before {
+  content: '\229E';
+}
+
+.dice::before {
+  content: '\229F';
+}
+
+.warm::before {
+  content: '\22A0';
+}
+
+.optional::before {
+  content: '\22A1';
+}
+
+.increaseT::before {
+  content: '\22A2';
+}
+
+.reduceT::before {
+  content: '\22A3';
+}
+
+.tidy::before {
+  content: '\22A4';
+}
+
+.waterPlants::before {
+  content: '\22A5';
+}
+
+.pinch::before {
+  content: '\22AD';
+}
+
+.yack::before {
+  content: '\22B2';
+}
+
+.counterTop::before {
+  content: '\22B3';
+}
+
+.fridge::before {
+  content: '\22B4';
+}
+
+.freezer::before {
+  content: '\22B5';
+}
+
+.lame::before {
+  content: '\22B6';
+}
+
+.flower::before {
+  content: '\22B9';
+}
+
+.decide::before {
+  content: '\22BA';
+}
+
+.grease::before {
+  content: '\22BB';
+}
+
+.butter::before {
+  content: '\22BC';
+}
+
+.steps::before {
+  content: '\22BD';
+}
+
+.dutch::before {
+  content: '\22BE';
+}
+
+.mash::before {
+  content: '\22BF';
+}
+
+.dust::before {
+  content: '\22C0';
+}
+
+.cream::before {
+  content: '\22C1';
+}
+
+.dryI::before {
+  content: '\22C2';
+}
+
+.wetI::before {
+  content: '\22C3';
+}
+
+.flour::before {
+  content: '\22C4';
+}
+
+.blend::before {
+  content: '\22C5';
+}
+
+.proces::before {
+  content: '\22C6';
+}
+
+.carbs::before {
+  content: '\22C7';
+}
+
+.bulb::before {
+  content: '\22C8';
+}
+
+.link::before {
+  content: '\22C9';
+}
+
+.backlink::after {
+  content: '\22C9';
+  font-family: minder;
+  font-size: 2rem;
+  position: absolute;
+  right: -4rem;
+}
+
+.recomend::before {
+  content: '\22CA';
+}
+
+.deepFry::before {
+  content: '\22D3';
+}
+
+// duplicate 228d
+// .wok::before {
+//   content: '\22D4';
+// }
+
+.fry::before {
+  content: '\22D6';
+}
+
+.saute::before {
+  content: '\22D8';
+}
+
+.laundry::before {
+  content: '\22E2';
+}
+
+.windows::before {
+  content: '\22E3';
+}
+
+.dishes::before {
+  content: '\22E4';
+}
+
+.desk::before {
+  content: '\22E5';
+}
+
+.thirsty::before {
+  content: '\22E6';
+}
+
+.drink::before {
+  content: '\22E7';
+}
+
+.fold::before {
+  content: '\22E8';
+}
+
+.tidy::before {
+  content: '\22E9';
+}
+
+.jam::before {
+  content: '\22ea';
+}
+
+.preserve::before {
+  content: '\22eb';
+}
+
+.bottle::before {
+  content: '\22EC';
+}
+
+.sandwich::before {
+  content: '\22ed';
+}
+
+.sift::before {
+  content: '\22EE';
+}
+
+.yeast::before {
+  content: '\22F0';
+}
+
+.sprinkle::before {
+  content: '\22F1';
+}
+
+.onoff::before {
+  content: '\22F2';
+}
+
+.settings::before {
+  content: '\22F3';
+}
+
+.audio::before {
+  content: '\22F4';
+}
+
+.photo::before {
+  content: '\22F5';
+}
+
+.upload::before {
+  content: '\22F6';
+}
+
+.edit::before {
+  content: '\22F8';
+}
+
+.cookbook::before {
+  content: '\22F9';
+}
+
+.monitor::before {
+  content: '\22fa';
+}
+
+.grill::before {
+  content: '\22FD';
+}
+
+.mixTogether::before {
+  content: '\22FF';
+}
+
+.delete::before {
+  content: '\2300';
+}
+
+.home::before {
+  content: '\2302';
+}
+
+.pour::before {
+  content: '\2307';
+}
+
+.transfer::before {
+  content: '\2308';
+}
+
+.roll::before {
+  content: '\2309';
+}
+
+.event::before {
+  content: '\230a';
+}
+
+.separate::before {
+  content: '\230b';
+}
+
+.brackets::before {
+  content: '\2311';
+}
+
+.soak::before {
+  content: '\2318';
+}
+
+
+.clock::before {
+  content: '\231A';
+}
+
+.prove::before {
+  content: '\231B';
+}
+
+.clean::before {
+  content: '\231e';
+}
+
+.rollingPin::before {
+  content: '\2326';
+}
+
+.pressure::before {
+  content: '\232c';
+}
+
+.popStar::before {
+  content: '\2335';
+}
+
+.toilet::before {
+  content: '\2336';
+}
+
+.clippers::before {
+  content: '\2337';
+}
+
+.search::before {
+  content: '\233d';
+}
+
+.diary::before {
+  content: '\2344';
+}
+
+.foodDiary::before {
+  content: '\2345';
+}
+
+.bioDiary::before {
+  content: '\2346';
+}
+
+.dv::before {
+  content: '\2347';
+}
+
+.laika::before, .story::before {
+  content: '\2348';
+}
+
+.minder::before {
+  content: '\2349';
+}
+
+.kodiranje::before {
+  content: '\234a';
+}
+
+.raskovnik::before {
+  content: '\234b';
+}
+
+.veles::before {
+  content: '\234c';
+}
+
+.majstor::before {
+  content: '\234d';
+}
+
+.bake::before {
+  content: '\2354';
+}
+
+.meat::before {
+  content: '\2355';
+}
+
+.dressing::before {
+  content: '\2356';
+}
+
+.pasta::before {
+  content: '\2357';
+}
+
+.salad::before {
+  content: '\2358';
+}
+
+.soup::before {
+  content: '\2359';
+}
+.spices::before {
+  content: '\235A';
+}
+
+.sweet::before {
+  content: '\235B';
+}
+
+.mnp::before {
+  content: '\235C';
+}
+
+.hot::before {
+  content: '\235D';
+}
+
+.hotPot::before {
+  content: '\235E';
+}
+
+.hAche::before, .headache::before {
+  content: '\2360';
+}
+
+.jAche::before, .jointache::before {
+  content: '\2361';
+}
+
+.cAche::before, .chestache::before {
+  content: '\2362';
+}
+
+.bAche::before {
+  content: '\2363';
+}
+
+.lbFAche::before {
+  content: '\2364';
+}
+
+.lbBAche::before {
+  content: '\2365';
+}
+
+.baad::before {
+  content: '\2366';
+}
+
+.cramp::before {
+  content: '\2367';
+}
+
+.men::before {
+  content: '\2368';
+}
+
+.poo::before {
+  content: '\2369';
+}
+
+.stool::before {
+  content: '\236A';
+}
+
+.pooStar::before {
+  content: '\236B';
+}
+
+.alcohol::before {
+  content: '\237A';
+}
+
+.algae::before {
+  content: '\237B';
+}
+
+.alliums::before {
+  content: '\237C';
+}
+
+.beans::before {
+  content: '\237D';
+}
+
+.beef::before {
+  content: '\237E';
+}
+
+.beer::before {
+  content: '\237F';
+}
+
+.beverage::before {
+  content: '\2380';
+}
+
+.drank::before {
+  content: '\2381';
+}
+
+.cheese::before {
+  content: '\2382';
+}
+
+.chocolate::before {
+  content: '\2383';
+}
+
+.citrus::before {
+  content: '\2384';
+}
+
+.bloat::before {
+  content: '\2386';
+}
+
+.squat::before {
+  content: '\2387';
+}
+
+.plank::before {
+  content: '\2388';
+}
+
+.weights::before {
+  content: '\2389';
+}
+
+.measurments::before {
+  content: '\238b';
+}
+
+.visboard::before {
+  content: '\238C';
+}
+
+.moodboard::before {
+  content: '\238d';
+}
+
+.kanban::before {
+  content: '\238e';
+}
+
+.woke::before {
+  content: '\239a';
+}
+
+.fever::before {
+  content: '\239b';
+}
+
+.drunk::before {
+  content: '\239c';
+}
+
+.nightmare::before {
+  content: '\239d';
+}
+
+.tired::before {
+  content: '\239e';
+}
+
+.cacao::before {
+  content: '\23A0';
+}
+
+.coco::before {
+  content: '\23A1';
+}
+
+.coffee::before {
+  content: '\23A2';
+}
+
+.corn::before {
+  content: '\23A3';
+}
+
+.cruciferae::before {
+  content: '\23A4';
+}
+
+.curredMeat::before {
+  content: '\23A5';
+}
+
+.dairy::before {
+  content: '\23A6';
+}
+
+.dry::before {
+  content: '\23A7';
+}
+
+.eggplant::before {
+  content: '\23A8';
+}
+
+.eggs::before {
+  content: '\23A9';
+}
+
+.extract::before {
+  content: '\23AA';
+}
+
+.ferment::before {
+  content: '\23AB';
+}
+
+.fish::before {
+  content: '\23AC';
+}
+
+.frozen::before {
+  content: '\23AD';
+}
+
+.fruit::before {
+  content: '\23AE';
+}
+
+.grains::before {
+  content: '\23AF';
+}
+
+.greens::before {
+  content: '\23B0';
+}
+
+.herbs::before {
+  content: '\23B1';
+}
+
+.fat::before {
+  content: '\23B2';
+}
+
+.legumes::before {
+  content: '\23B3';
+}
+
+.lentils::before {
+  content: '\23B4';
+}
+
+.lettuce::before {
+  content: '\23B5';
+}
+
+.lipids::before {
+  content: '\23B6';
+}
+
+.melon::before {
+  content: '\23B7';
+}
+
+.milk::before {
+  content: '\23B8';
+}
+
+.mushroom::before {
+  content: '\23B9';
+}
+
+.nuts::before {
+  content: '\23BA';
+}
+
+.partials::before {
+  content: '\23BB';
+}
+
+.peppercorns::before {
+  content: '\23BC';
+}
+
+.pepper::before {
+  content: '\23BD';
+}
+
+.pork::before {
+  content: '\23BE';
+}
+
+.potatoes::before {
+  content: '\23BF';
+}
+
+.poultry::before {
+  content: '\23C0';
+}
+
+.rice::before {
+  content: '\23C1';
+}
+
+.protein::before {
+  content: '\23C2';
+}
+
+.roots::before {
+  content: '\23C3';
+}
+
+.salt::before {
+  content: '\23C4';
+}
+
+.sauce::before {
+  content: '\23C5';
+}
+
+.secondary::before {
+  content: '\23C6';
+}
+
+.seeds::before {
+  content: '\23C7';
+}
+
+.soy::before {
+  content: '\23C8';
+}
+
+.squash::before {
+  content: '\23C9';
+}
+
+.starch::before {
+  content: '\23CA';
+}
+
+.sugar::before {
+  content: '\23CB';
+}
+
+.tea::before {
+  content: '\23CC';
+}
+
+.tomato::before {
+  content: '\23CD';
+}
+
+.vegetables::before {
+  content: '\23CE';
+}
+
+.tape::before {
+  content: '\23CF';
+}
+
+.vinegar::before {
+  content: '\23D0';
+}
+
+.water::before {
+  content: '\23D1';
+}
+
+.yogurt::before {
+  content: '\23D2';
+}
+
+.zucchini::before {
+  content: '\23D3';
+}
+
+.peas::before {
+  content: '\23d4';
+}
+
+.brush::before {
+  content: '\23d5';
+}
+
+.crack::before {
+  content: '\23d6';
+}
+
+.cube::before {
+  content: '\23d7';
+}
+
+.deglaze::before {
+  content: '\23d8';
+}
+
+.drizzle::before {
+  content: '\23d9';
+}
+
+.knead::before {
+  content: '\23da';
+}
+
+.raid2::before {
+  content: '\23db';
+}
+
+.crowbar::before {
+  content: '\23dc';
+}
+
+.starglasses::before {
+  content: '\23dd';
+}
+
+.languages::before {
+  content: '\23e9';
+}
+
+.vocab::before {
+  content: '\23ea';
+}
+
+.phrases::before {
+  content: '\23eb';
+}
+
+.dictionary::before {
+  content: '\23ec';
+}
+
+.fcards::before {
+  content: '\23ed';
+}
+
+.boards::before {
+  content: '\23ee';
+}
+
+.categories::before {
+  content: '\23ef';
+}
+
+.pomodoro::before {
+  content: '\23f0';
+}
+
+.pomodoro25::before {
+  content: '\23f3';
+}
+
+.pedometer::before {
+  content: '\23f4';
+}
+
+.locate::before {
+  content: '\23f5';
+}
+
+.stopwatch::before {
+  content: '\23f6';
+}
+
+.counter::before {
+  content: '\23f7';
+}
+
+.fold::before {
+  content: '\23f8';
+}
+
+.smash::before {
+  content: '\23f9';
+}
+
+.shred::before {
+  content: '\23fa';
+}
+
+.shred2::before {
+  content: '\23fB';
+}
+
+.book::before {
+  content: '\2410';
+}
+
+.category::before {
+  content: '\2414';
+}
+
+.steam::before {
+  content: '\2424';
+}
+
+.bundt::before {
+  content: '\2425';
+}
+
+.tubepan::before {
+  content: '\2426';
+}
+
+.measuringcup::before {
+  content: '\2427';
+}
+
+.menzura::before {
+  content: '\2428';
+}
+
+.grate::before {
+  content: '\2429';
+}
+
+.kettle::before {
+  content: '\242a';
+}
+
+.saucePan::before {
+  content: '\242b';
+}
+
+.springForm::before {
+  content: '\242c';
+}
+
+.bainMarie::before {
+  content: '\242d';
+}
+
+.bao::before {
+  content: '\2438';
+}
+
+.biscuit::before {
+  content: '\2439';
+}
+
+.cake::before {
+  content: '\243a';
+}
+
+.curry::before {
+  content: '\243b';
+}
+
+.custard::before {
+  content: '\243c';
+}
+
+.deep::before {
+  content: '\243d';
+}
+
+.flatbread::before {
+  content: '\243e';
+}
+
+.focaccia::before {
+  content: '\243f';
+}
+
+.fungi::before {
+  content: '\2440';
+}
+
+.gf::before {
+  content: '\2441';
+}
+
+.icecream::before {
+  content: '\2442';
+}
+
+.keto::before {
+  content: '\2443';
+}
+
+.muffin::before {
+  content: '\2444';
+}
+
+.naan::before {
+  content: '\2445';
+}
+
+.onigiri::before {
+  content: '\2446';
+}
+
+.paleo::before {
+  content: '\2447';
+}
+
+.pie::before {
+  content: '\2448';
+}
+
+.pita::before {
+  content: '\2449';
+}
+
+.pizza::before {
+  content: '\244a';
+}
+
+.roti::before {
+  content: '\244b';
+}
+
+.shred::before {
+  content: '\244c';
+}
+
+.steam::before {
+  content: '\244d';
+}
+
+.stew::before {
+  content: '\244e';
+}
+
+.stirFry::before {
+  content: '\244f';
+}
+
+.surf::before {
+  content: '\2450';
+}
+
+.tapas::before {
+  content: '\2451';
+}
+
+.tortilla::before {
+  content: '\2452';
+}
+
+.turf::before {
+  content: '\2453';
+}
+
+.vegan::before {
+  content: '\2454';
+}
+
+.skillet::before {
+  content: '\245e';
+}
+
+.pot::before {
+  content: '\245f';
+}
+
+.pot2::before {
+  content: '\2460';
+}
+
+.turn::before {
+  content: '\2461';
+}
+
+.layer::before {
+  content: '\2462';
+}
+
+.grind::before {
+  content: '\2463';
+}
+
+.strain::before {
+  content: '\2464';
+}
+
+.kadai::before {
+  content: '\2465';
+}
+
+.small::before {
+  content: '\2474';
+}
+
+.medium::before {
+  content: '\2475';
+}
+
+.large::before {
+  content: '\2476';
+}
+
+.drain::before {
+  content: '\2498';
+}
+
+.mince::before {
+  content: '\2499';
+}
+
+.meatgrinder::before {
+  content: '\249a';
+}
+
+.cuttingBoard::before {
+  content: '\249b';
+}
+
+.garnish2::before {
+  content: '\249c';
+}
+
+.garnish3::before {
+  content: '\249d';
+}
+
+.garnish4::before {
+  content: '\249e';
+}
+
+.babel::before {
+  content: '\24e8';
+}
+
+.serbian::before {
+  content: '\24e9';
+}
+
+.english::before {
+  content: '\24ea';
+}
+
+.german::before {
+  content: '\24eb';
+}
+
+.russian::before {
+  content: '\24ec';
+}
+
+.spanish::before {
+  content: '\24ed';
+}
+
+.japanese::before {
+  content: '\24ee';
+}
+
+.chinese::before {
+  content: '\24ef';
+}
+
+.greek::before {
+  content: '\24f0';
+}
+
+.irish::before {
+  content: '\24f0';
+}
+
+.italian::before {
+  content: '\24f0';
+}
+
+.korean::before {
+  content: '\24f0';
+}
+
+.swedish::before {
+  content: '\24f0';
+}
+
+.arabic::before {
+  content: '\24f0';
+}
+
+.hammer::before {
+  content: '\2549';
+}
+
+.notes::before {
+  content: '\2591';
+}
+
+.task::before {
+  content: '\2592';
+}
+
+.like::before {
+  content: '\2599';
+}
+
+.serve::before {
+  content: '\259A';
+}
+
+.code::before {
+  content: '\25A3';
+}
+
+.study::before {
+  content: '\25A6';
+}
+
+.store::before {
+  content: '\25A9';
+}
+
+.palette::before {
+  content: '\25cd';
+}
+
+.paint::before {
+  content: '\25ce';
+}
+
+.snorkle::before {
+  content: '\25cf';
+}
+
+.star::before {
+  content: '\2606';
+}
+
+.madeIt::before {
+  content: '\2714';
+}
+
+.into::before {
+  content: '\2935';
+}
+
+.save::before {
+  content: '\1f4be';
+}
+
+.cloneSteps {
+  position: absolute;
+  top: -1rem;
+  right: 0;
+}

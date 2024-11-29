@@ -1,0 +1,14 @@
+<section class="nameOfOne">
+  {{> mains/show/partials/picture}}
+
+  <h1>
+    {{data.name}}
+    {{> mains/show/partials/category}}
+    {{#eq dom 'story'}}Viewing story{{/eq}}
+  </h1>
+
+  {{> mains/show/partials/miscellaneous}}
+</section>
+
+{{#eq dom 'monitor'}}<a href="{{data.site}}" title="visit site">{{/eq}}
+

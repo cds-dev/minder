@@ -1,0 +1,103 @@
+{{#eq dom 'recipe ingredient'}}
+<fieldset class="miscellaneous secondThis">
+  <legend>Miscellaneous</legend>
+
+  <div class="sugestWrapper">
+    <span class="labelify">Suggest this</span>
+
+    <input
+      class="hide"
+      type="checkbox"
+      name="rotation"
+      id="rotation"
+      {{#if data.rotation}}
+        checked
+      {{/if}}>
+
+    <label for="rotation" class="checkBox nAfter"></label>
+  </div>
+
+  <div>
+    <span class="labelify">My experience</span>
+    
+    <div class="myExperience">
+      <input type="radio" name="myExperience" id="yetToTry" {{#co data.myExperience.name "yet to try"}}checked{{/co}}>
+
+      <label for="yetToTry"
+      class="icons yetToTry nAfter"
+      title="Yet to try"></label>
+
+      <input type="radio" name="myExperience" id="onTheFence" {{#co data.myExperience.name "on the fence"}}checked{{/co}}>
+
+      <label for="onTheFence" class="icons onTheFence nAfter" title="On the fence..."></label>
+
+      <input type="radio" name="myExperience" id="definitiveRepeat" {{#co data.myExperience.name "definitive repeat"}}checked=""{{/co}}>
+
+      <label for="definitiveRepeat" class="definitveRepeat icons nAfter" title="Definitive repeat!"></label>
+
+      <input type="radio" name="myExperience" id="avoid" {{#co data.myExperience.name "avoid"}}checked{{/co}}>
+
+      <label for="avoid" class="avoid icons nAfter" title="Avoid!!"></label>
+    </div>
+  </div>
+
+  <div class="right">
+    <label for="season">Season</label>
+    <input
+      name="season"
+      id="season"
+      value="{{data.season.name}}" list="seasons">
+  </div>
+
+  <div class="right">
+    <label for="cuisine">Cuisine</label>
+    <input
+      type="text"
+      name="cuisine"
+      id="cuisine"
+      list="cuisines"
+      value="{{data.cuisine.name}}">
+  </div>
+</fieldset>
+{{/eq}}
+
+{{#eq dom 'ingredient'}}
+  <fieldset class="test">
+    <legend>Miscellaneous</legend>
+
+    <div class="conversion">
+      <span class="labelify">Conversion of 1 cup into</span>
+
+      <div class="splitInHalf">
+        <div class="right">
+          <label for="cquantity">quantity</label>
+          <input
+            type="number"
+            name="cquantity"
+            id="cquantity"
+            value="{{data.conversion.quantity}}">
+        </div>
+
+        <div class="right">
+          <label for="cunit">unit</label>
+          <input
+            type="text"
+            name="cunit"
+            id="cunit"
+            value="{{data.conversion.unit}}"
+            placeholder="g, ml">
+        </div>
+      </div>
+    </div>
+
+    
+
+    <div class="nutrients bump">
+      <p class="labelify">to be added, puppet</p>
+      <p>nutrients,</p>
+      <p>glycemic index,</p>
+      <p>diaas score</p>
+    </div>
+
+  </fieldset>
+{{/eq}}

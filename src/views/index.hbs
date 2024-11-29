@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="/styles/style.css" media="screen" defer async>
+  <link rel="icon" type="image/x-icon" href="/imgs/clock.ico">
+  <link rel="manifest" href="../../manifest.json"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <style>
+    html {
+      background-color: #18182b;
+      background: linear-gradient(0deg, #18182b 10%, #070713 50%, #18182b 100%);
+      color: #f2a61d;
+      font-size: 1rem;
+      background-size: auto .5rem; {{!-- makes gradient repeat --}}
+    }
+    body {
+      margin: .5rem;
+      height: calc(100% - 3rem);
+      margin-bottom: -3rem;
+    }
+    .listItem {
+      display: none;
+    }
+    .hide {
+      display: none;
+    }
+  </style>
+
+  <title>{{title}} | Minder App</title>
+</head>
+
+<body>
+  <main>{{{body}}}</main>
+
+
+  <div class="allDates hide">
+    {{#each allDates}}
+      <p>{{this}}</p>
+    {{/each}}
+  </div>
+
+  <div class="jumpTo">
+    <a href="#top"><div class="goToTop stepJump">top</div></a>
+  </div>
+</body>
+
+<script>
+  if('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/serviceWorker.js')
+      .then(function(registration) {
+        console.log(`sw registered with scope ${registration.scope}`)
+      }, function(err) {
+        console.log('Service Worker registration failed:', err)
+      })
+    })
+  } else {
+    console.log('sw not supported')
+  }
+</script>
+
+{{!-- <script src="/front/universal.js" type="module" defer></script> --}}

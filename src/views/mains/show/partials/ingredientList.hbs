@@ -1,0 +1,32 @@
+{{#eq dom 'recipe secondary'}}
+  {{#if data.ingredients}}
+  <section class="topBorder ingredientsSection">
+    <h2>Ingredients</h2>
+
+    <div class="ingredientList">
+      {{#each data.ingredients}}
+        {{#if ingredient.name}}
+        {{ingredient.required}}
+          <div class="dataCard ingredientCard relativize">
+            <a href="/show/ingredient/{{ingredient._id}}">
+              <div class="ingredientTopWrapper {{#co required true}}greenBorder{{/co}}{{#co required false}}yellowBorder{{/co}}">
+                <img src="{{ingredient.picture}}" alt="{{ingredient.name}}" loading="lazy" class="recipeIngredientsPicture">
+                <div class="ingredientName">{{ingredient.name}}</div>
+              </div>
+            </a>
+            <div class="ingredientAmounts {{#co required true}}greenBorder{{/co}}{{#co required false}}yellowBorder{{/co}} box slideleft">
+              {{#if amount}}
+                {{amount}} {{unit.name}}
+              {{else}}
+                n / a
+              {{/if}}
+            </div>
+          </div>
+        {{/if}}
+      {{/each}}
+    </div>
+
+    {{> mains/show/partials/shortList}}
+  </section>
+  {{/if}}
+{{/eq}}

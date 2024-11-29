@@ -1,0 +1,45 @@
+@use "../fonts/fonts" as f;
+@use "../general/colors" as c;
+@use "../general/mixins" as *;
+
+
+.addToList {
+  position: fixed;
+  display: none;
+  background-color: c.$lazyLoad;
+  inset: 0;
+  // 
+  // grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  
+  // justify-items: center;
+  // align-content: space-evenly;
+  height: 100vh;
+  overflow-y: scroll;
+
+  modal {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    width: 50%;
+    margin: auto;
+    grid-auto-rows: 8rem;
+    grid-auto-flow: dense;
+  }
+
+  .selectItem {
+    width: 8rem;
+    position: relative; // for the list name
+
+    img {
+      width: 8rem;
+      height: 8rem;
+    }
+  }
+
+  .listItemName {
+    position: absolute;
+    bottom: .5rem;
+    background: c.$lazyLoad;
+    padding-inline: .2rem;
+  }
+}

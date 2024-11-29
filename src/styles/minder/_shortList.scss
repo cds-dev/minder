@@ -1,0 +1,83 @@
+@use "../fonts/fonts" as f;
+@use "../general/colors" as c;
+@use "../general/mixins" as *;
+
+.ingredientList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+  grid-row-gap: 5rem;
+  margin-top: 4rem;
+
+  .ingredientTopWrapper {
+    border-bottom: .3rem solid;
+    // padding: 0;
+  }
+
+  .ingredientName {
+    font-size: 1rem;
+    width: fit-content;
+    max-width: 9.3rem;
+    position: absolute;
+    top: .3rem;
+    left: .3rem;
+    background: c.$lazyLoad;
+    color: c.$gold;
+    padding: 0 .3rem;
+  }
+
+    img {
+      background: c.$lazyLoad;
+    }
+
+  .ingredientAmounts {
+    position: absolute;
+    background-color: c.$black;
+    font-size: 1rem;
+    bottom: -2.6rem;
+    right: 0;
+    padding: .5rem;
+    cursor: w-resize;
+  }
+
+  .shadePic {
+    background: rgba(0,0,0,0.5);
+  }
+}
+
+
+.shortList {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .itemCard {
+    position: relative;
+
+    div {
+      position: absolute;
+      bottom: 0;
+      background: c.$lazyLoad;
+    }
+  }
+
+  a {
+    padding: 1rem;
+    background: c.$lazyLoad;
+  }
+}
+
+
+@media only screen and (min-width: 19rem) {
+  .ingredientName {
+    font-size: 1.5rem;
+  }
+
+  .ingredientAmounts {
+    font-size: 1.5rem;
+    bottom: -3.1rem;
+  }
+}

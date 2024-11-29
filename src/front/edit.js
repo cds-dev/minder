@@ -1,0 +1,15 @@
+import datalists from "/front/edit/fetchDatalists.js"
+import menu from "/front/utils/flipMenu.js"
+import submit from "/front/utils/submit.js"
+import plusMinus from "/front/edit/plusMinus.js"
+import camera from "/front/utils/camera.js"
+import btnClick from "/front/utils/buttonClick.js"
+import audio from "/front/utils/audio.js"
+import fixElements from "/front/foods/fixElements.js"
+import keepFor from "/front/edit/keepFor.js"
+import minder from "/front/edit/minder.js"
+import uploadFileButton from "/front/edit/uploadFileButton.js"
+import textArea from "/front/edit/textArea.js"
+import puppetMaster from "/front/utils/puppetMaster.js"
+
+fixElements()

@@ -1,0 +1,26 @@
+<div class="listAll listAll{{dom}}">
+  <nav class="mainNav">
+    {{> navs/main}}
+
+    {{> navs/mains/list}}
+  </nav>
+
+  {{> mains/list/partials/message}}
+
+  {{> mains/list/partials/h1}}
+
+  {{> navs/submenu/submenu}}
+
+  {{> utils/search}}
+
+  <div class="displayAll">
+    {{> mains/list/partials/displayStyle}}
+
+    {{> mains/list/partials/displayGrid}}
+
+    {{!-- {{> mains/list/partials/displayList}} --}}
+  </div>
+</div>
+
+
+{{> mains/list/links}}

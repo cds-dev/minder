@@ -1,0 +1,51 @@
+{{#eq dom 'minder'}}
+  <fieldset class="mindersForm">
+    <legend>Time</legend>
+
+    <div class="right bump dingins">
+      <label for="in">ding me in</label>
+      {{> mains/edit/partials/main/dingMeIn}}
+    </div>
+
+    <div class="splitInHalf bump">
+      <div class="right">
+        <label for="time">time</label>
+        <input type="time" name="time" id="time" value="{{data.minder.time}}">
+      </div>
+
+      <div class="right">
+        <label for="date">date</label>
+        <input type="date" name="date" id="date" value="{{data.minder.date}}">
+      </div>
+    </div>
+
+    <div class="bump">
+      <input type="radio" name="repeat" id="annually" data-attr="annually" {{#eq data.minder.repeats 'annually'}}checked{{/eq}}>
+      <label class="nAfter icons annually" for="annually" title="annually"></label>
+      <input type="radio" name="repeat" id="monthly" data-attr="monthly" {{#eq data.minder.repeats 'monthly'}}checked{{/eq}}>
+      <label class="nAfter icons monthly" for="monthly" title="monthly"></label>
+      <input type="radio" name="repeat" id="biweekly" data-attr="biweekly" {{#eq data.minder.repeats 'biweekly'}}checked{{/eq}}>
+      <label class="nAfter icons biweekly" for="biweekly" title="biweekly"></label>
+      <input type="radio" name="repeat" id="weekly" data-attr="weekly" {{#eq data.minder.repeats 'weekly'}}checked{{/eq}}>
+      <label class="nAfter icons weekly" for="weekly" title="weekly"></label>
+      <input type="radio" name="repeat" id="weekdays" data-attr="weekdays" {{#eq data.minder.repeats 'weekdays'}}checked{{/eq}}>
+      <label class="nAfter icons weekdays" for="weekdays" title="weekdays"></label>
+      <input type="radio" name="repeat" id="daily" data-attr="daily" {{#eq data.minder.repeats 'daily'}}checked{{/eq}}>
+      <label class="nAfter icons daily" for="daily" title="daily"></label>
+      <label class="nAfter icons meds" title="use next two for medication"></label>
+      <input type="radio" name="repeat" id="8h" data-attr="8h" {{#eq data.minder.repeats '8h'}}checked{{/eq}}>
+      <label class="nAfter icons eightHours" for="8h" title="every 8 hours"></label>
+      <input type="radio" name="repeat" id="6h" data-attr="6h" {{#eq data.minder.repeats '6h'}}checked{{/eq}}>
+      <label class="nAfter icons sixHours" for="6h" title="every 6 hours"></label>
+    </div>
+
+    <label for="snooze" class="bump">snooze for</label>
+    <div class="right snoozeMe">
+      <input type="number" name="snooze" id="snooze" value="{{data.minder.defaultSnooze}}">
+      {{> mains/edit/partials/main/dingMeIn}}
+    </div>
+  </fieldset>
+
+  <p>ding ahead</p>
+  <p>end date</p>
+{{/eq}}

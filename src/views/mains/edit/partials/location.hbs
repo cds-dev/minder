@@ -1,0 +1,50 @@
+{{#eq dom 'store'}}
+
+  {{#if data.bus.length}}
+
+
+    {{#each data.bus}}
+      <fieldset id="addressPlus" >
+        <label for="address">address</label>
+        <div class="right addPlus">
+          <input type="text" id="address" name="address" value="{{address}}">
+
+          <span class="shrinkedIcon icons">get!</span>
+
+          <span class="shrinkedIcon icons plus"></span>
+        </div>
+
+        <label for="bus">bus</label>
+        <div class="splitInHalf">
+          <div class="right"><input type="text" id="line" name="line" value="{{line}}" placeholder="line"></div>
+
+          <div class="right"><input type="text" id="stop" name="stop" value="{{stop}}" placeholder="stop"></div>
+        </div>
+
+      </fieldset>
+    {{/each}}
+    
+
+  {{else}}
+
+    <fieldset id="addressPlus" >
+      <label for="address">address</label>
+      <div class="right addPlus">
+        <input type="text" id="address" name="address">
+
+        <span class="shrinkedIcon icons">get!</span>
+
+        <span class="shrinkedIcon icons plus"></span>
+      </div>
+
+      <label for="bus">bus</label>
+      <div class="splitInHalf">
+        <div class="right"><input type="text" id="line" name="line" value="{{line}}" placeholder="line"></div>
+
+        <div class="right"><input type="text" id="stop" name="stop" value="{{stop}}" placeholder="stop"></div>
+      </div>
+    </fieldset>
+
+  {{/if}}
+
+{{/eq}}

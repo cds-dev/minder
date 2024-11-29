@@ -1,0 +1,31 @@
+{{#eq dom 'recipe ingredient'}}
+  <fieldset class="keepInput secondThis">
+    <legend>Keep for:</legend>
+
+    <div class="keepAt">
+      <div class="right">
+        <label for="counter" class="icons shrinkedIcon counter nAfter"></label>
+        <input type="text" name="counter" id="counter"
+        {{#each data.keep}}{{#eq at.name "counter"}}
+        value="{{this.for}}"
+        {{/eq}}{{/each}}>
+      </div>
+
+      <div class="right">
+        <label for="fridge" class="icons shrinkedIcon fridge nAfter"></label>
+        <input type="text" name="fridge" id="fridge"
+        {{#each data.keep}}{{#eq at.name "fridge"}}
+        value="{{this.for}}"
+        {{/eq}}{{/each}}>
+      </div>
+
+      <div class="right">
+        <label for="freezer" class="icons shrinkedIcon freezer nAfter"></label>
+        <input type="text" name="freezer" id="freezer"
+        {{#each data.keep}}{{#eq at.name "freezer"}}
+        value="{{this.for}}"
+        {{/eq}}{{/each}}>
+      </div>
+    </div>
+  </fieldset>
+{{/eq}}

@@ -1,0 +1,8 @@
+{{!-- THISIS: COOK --}}
+{{#eq dom 'recipe ingredient'}}
+  <div class="right cookInput secondThis">
+    <label for="cook">Cook</label>
+
+    <input type="text" id="cook" name="cook" value="{{data.cook.name}}" list="cooks">
+  </div>
+{{/eq}}

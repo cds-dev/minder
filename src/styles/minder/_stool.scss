@@ -1,0 +1,174 @@
+.addStool {
+  grid-column: 2/5;
+  grid-row: 1/2;
+
+  .scale {
+    display: inline-grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 84%;
+    gap: 20%;
+  }
+
+  fieldset {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 95%;
+    gap: 1rem;
+    position: relative;
+  }
+
+  .grade {
+    width: min-content;
+    justify-self: center;
+  }
+
+  .grade:first-child() {
+    justify-self: start;
+  }
+  //.grade:nth-child(1) 
+
+  .grade:last-child() {
+    justify-self: end;
+  }
+
+  input[type="radio"]:checked + label {
+    border: 2px solid white;
+  }
+
+  #hardness, #quantity {
+    width: 96%;
+  }
+
+  .swatches {
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    top: -2rem;
+    padding: 0;
+  }
+
+  .c3D0D01 {
+    background: #3D0D01
+  }
+
+  .c531202 {
+    background: #531202;
+  }
+
+  .c6C1702 {
+    background: #6C1702;
+  }
+
+  .c892C03 {
+    background: #892C03;
+  }
+
+  .c9C3103 {
+    background: #9C3103;
+  }
+
+  .cBC6D03 {
+    background: #BC6D03;
+  }
+
+  .c8E0407 {
+    background: #8E0407;
+  }
+
+  .c6F712B {
+    background: #6F712B;
+  }
+
+  .colorRadiosWrapper {
+    margin-top: 4rem;
+  }
+
+  .colorRadios {
+    display: inline-grid;
+    width: 100%;
+    grid-template-columns: repeat(8, 1fr);
+    margin-top: 2rem;
+    justify-items: left;
+  }
+
+  .shapeRadios {
+    display: inline-grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 4rem;
+  }
+
+  input[type="radio"] {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+
+  .rate {
+    position: relative;
+    top: -1rem;
+  }
+
+  .shapes {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    padding: 0;
+    top: -4rem;
+  }
+
+  .type1 {
+    background-image: url("../../imgs/diary/1.png");
+    background-size: contain;
+  }
+
+  .type2 {
+    background-image: url("../../imgs/diary/2.png");
+    background-size: contain;
+  }
+
+  .type3 {
+    background-image: url("../../imgs/diary/3.png");
+    background-size: contain;
+  }
+
+  .type4 {
+    background-image: url("../../imgs/diary/4.png");
+    background-size: contain;
+  }
+
+  .type5 {
+    background-image: url("../../imgs/diary/5.png");
+    background-size: contain;
+  }
+
+  .type6 {
+    background-image: url("../../imgs/diary/6.png");
+    background-size: contain;
+  }
+
+  .type7 {
+    background-image: url("../../imgs/diary/7.png");
+    background-size: contain;
+  }
+
+  .star {
+    
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    //width: 4rem;
+    //height: 4rem;
+    display: inline-block;
+    font-size: 4rem;
+    padding: 0;
+    height: 4rem;
+  }
+
+  .star::before {
+    position: relative;
+    top: -1rem;
+  }
+}

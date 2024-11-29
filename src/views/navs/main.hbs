@@ -1,0 +1,34 @@
+<a title="menu"><span class="icons list"></span></a>
+
+
+<a href="/" title="main page" class="closedMenu"><span class="home icons yellowBorder"></span></a>
+
+{{#eq dom "technique ingredient recipe chef"}}
+  {{> navs/apps/cookbook}}
+{{/eq}}
+
+{{#eq dom "shopping store item"}}
+  {{> navs/apps/shopping}}
+{{/eq}}
+
+{{#eq dom "diary story stool period food measurments bio"}}
+  {{> navs/apps/diary}}
+{{/eq}}
+
+{{#eq dom "kanban"}}
+  <a href="/list/kanban/" class="closedMenu" title="kanban"><span class="icons kanban blueBorder colorBlue"></span></a>
+{{/eq}}
+
+{{#eq dom "flash note study"}}
+  {{> navs/apps/note}}
+{{/eq}}
+
+{{#eq dom "minder"}}
+  {{> navs/apps/minder}}
+{{/eq}}
+
+{{#eq dom "monitor"}}
+  {{> navs/apps/monitor}}
+{{/eq}}
+
+<a href="/category/{{dom}}/add" title="{{dom}} categories" class="closedMenu"><span class="category icons pinkBorder colorPink"></span></a>

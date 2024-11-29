@@ -1,0 +1,17 @@
+<div class="modify modify{{dom}}" id="top">
+  <nav class="mainNav">
+    {{> navs/main}}
+
+    {{> navs/back}}
+  </nav>
+
+  {{> mains/edit/partials/repeats}}
+
+  <div class="pinkBorder box formBump">
+    <h1>Edit {{data.name}}</h1>
+
+    {{> mains/edit/form}}
+  </div>
+</div>
+
+{{> mains/edit/links}}

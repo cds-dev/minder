@@ -1,0 +1,51 @@
+@use "../fonts/fonts" as f;
+@use "../general/colors" as c;
+@use "../general/mixins" as *;
+
+.calendarTable {
+  margin: auto;
+  border-spacing: .2rem;
+
+  .filledDay {
+    @include circle;
+    border-color: c.$sky;
+  }
+
+  .circleToday {
+    @include circle;
+    border-color: c.$pink;
+    color: c.$pink;
+  }
+
+  .markTenth {
+    @include circle;
+    border-color: c.$blue;
+    color: c.$blue;
+  }
+
+  tbody tr {
+    td {
+      border-radius: .5rem;
+      background: #1b1b31;
+      width: 14.25%;
+      height: 2rem;
+      text-align: center;
+    }
+
+    td a {
+      color: inherit;
+    }
+  }
+
+  .otherMonth {
+    color: #555;
+  }
+
+  th {
+    padding: 0.2rem;
+  }
+
+  .currMonthName {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,9 @@
+<a href="/add/{{dom}}/" class="closedMenu"><span class="plus icons greenBorder colorGreen" title="add new {{dom}} [+]"></span></a>
+
+<a href="/edit/{{dom}}/{{data._id}}" class="closedMenu"><span class="edit icons greenBorder colorGreen" title="edit {{dom}} [*]"></span></a>
+
+{{#eq dom 'item ingredient note'}}
+  <button type="submit" class="closedMenu cart icons greenBorder colorGreen pointer" title="add to shopping list"></button>
+{{/eq}}
+
+<a href="/delete/{{dom}}/{{data._id}}" class="closedMenu"><span class="delete icons pinkBorder colorPink" title="delete {{dom}}"></span></a>

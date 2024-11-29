@@ -1,0 +1,190 @@
+<div class="hide" id="repeats">
+  <div class="right addPlus" id="categoryPlus">
+    <input
+      type="text"
+      id="category"
+      name="category"
+      list="categories">
+
+    <span class="plus icons shrinkedIcon"></span>
+    <span class="minus icons shrinkedIcon"></span>
+  </div>
+
+  {{#eq dom 'ingredient'}}
+  <div class="addPlus" id="pairPlus">
+    <input type="text" id="substitute" name="substitute" list="foods">
+
+    <span class="plus icons shrinkedIcon"></span>
+    <span class="minus icons shrinkedIcon"></span>
+  </div>
+
+  <div class="addPlus" id="varPlus">
+    <input type="text" id="related" name="related" list="foods">
+
+    <span class="plus icons shrinkedIcon"></span>
+    <span class="minus icons shrinkedIcon"></span>
+  </div>
+  {{/eq}}
+
+  {{#eq dom 'recipe'}}
+  <div class="addPlus" id="pairPlus">
+    <input type="text" id="pair" name="pair" list="foods">
+
+    <span class="plus icons shrinkedIcon"></span>
+    <span class="minus icons shrinkedIcon"></span>
+  </div>
+
+  <div class="addPlus" id="varPlus">
+    <input type="text" id="variant" name="variant" list="foods">
+
+    <span class="plus icons shrinkedIcon"></span>
+    <span class="minus icons shrinkedIcon"></span>
+  </div>
+
+  <div class="stepTime">
+    <label for="duration">Duration</label>
+    <div class="timeUnitWrapper addPlus right" id="timePlus">
+      {{> mains/edit/partials/durationUnits}}
+      <span class="plus icons shrinkedIcon"></span>
+      <span class="minus icons shrinkedIcon"></span>
+    </div>
+
+  </div>
+
+  <div id="positional" class="relativize">
+    <span class="steps icons cloneSteps"></span>
+
+    <div class="stepOrder">
+      Step <span class="orderNumber">{{inc @index}}</span>:
+    </div>
+
+    <div class="stepName right">
+      <label for="stepName">Name</label>
+      <input 
+        type="text"
+        name="stepName"
+        id="stepName">
+    </div>
+
+    <div class="stepTime">
+      <label for="duration">Duration</label>
+
+      <div class="timeUnitWrapper addPlus right" id="timePlus">
+        {{> mains/edit/partials/durationUnits}}
+        <span class="plus icons shrinkedIcon"></span>
+        <p></p>
+      </div>
+    </div>
+
+    <label for="element">element</label>
+    {{!-- <label for="amount">amount</label>
+    <label for="unit">unit</label> --}}
+    <div class="substep right addPlus" id="substep">
+      <input type="text" id="element" name="elementRef" list="substeps">
+      <p><input type="text" id="amount" name="amount" value="" class="hide"></p>
+      <p><input type="text" id="unit" name="unit" value="" list="measurements" class="hide"></p>
+      <span class="plus icons shrinkedIcon"></span>
+      <span class="minus icons shrinkedIcon"></span>
+    </div>
+
+    <div class="splitInHalf">
+      <div class="right">
+        <label for="temperatureS">Cook at</label>
+        <input type="text" name="temperatureS" id="temperatureS">
+      </div>
+      <div class="right">
+        <label for="temperatureI">Internal t</label>
+        <input type="text" name="temperatureI" id="temperatureI">
+      </div>
+    </div>
+
+    <div class="stepNotes">
+      <label for="stepNotes">Notes</label>
+      <div>
+        <textarea name="stepNotes" id="stepNotes"></textarea>
+      </div>
+    </div>
+  </div>
+  {{/eq}}
+
+  {{#eq dom 'chef'}}
+  <div class="addPlus" id="colleagues">
+    <input type="text" id="colleagues" name="colleagues" list="cooks">
+
+    <span class="plus icons shrinkedIcon"></span>
+    <span class="minus icons shrinkedIcon"></span>
+  </div>
+
+  <div class="addPlus" id="organization">
+    <input type="text" id="organization" name="organization" list="">
+
+    <span class="plus icons shrinkedIcon"></span>
+    <span class="minus icons shrinkedIcon"></span>
+  </div>
+  {{/eq}}
+
+  <div class="addPlus" id="notePlus">
+    <textarea id="notes" name="notes">{{data.notes}}</textarea>
+
+    <span class="plus icons shrinkedIcon notesIcon"></span>
+    <span class="minus icons shrinkedIcon notesIcon"></span>
+  </div>
+
+  {{#eq dom 'store'}}
+  <fieldset id="addressPlus" >
+    <label for="address">address</label>
+
+    <div class="right addPlus">
+      <input type="text" id="address" name="address">
+
+      <span class="shrinkedIcon icons">get!</span>
+      
+      <span class="shrinkedIcon icons plus"></span>
+    </div>
+
+    <label for="bus">bus</label>
+
+    <div class="splitInHalf">
+      <div class="right"><input type="text" id="line" name="line" placeholder="line"></div>
+
+      <div class="right"><input type="text" id="stop" name="stop" placeholder="stop"></div>
+    </div>
+  </fieldset>
+  {{/eq}}
+
+  {{#eq dom 'item ingredient'}}
+    <fieldset id="storePlus">
+      <div class="right">
+        <label for="storename">name<span class="redStar">*</span></label>
+        <input type="text" id="storename" name="storename" value="" placeholder="Store name" list="stores">
+      </div>
+
+      <div class="splitIn3rds">
+        <div class="right">
+          <label for="price">price</label>
+          <input type="text" id="price" name="price" value="" placeholder="Item price">
+        </div>
+
+        <div class="right">
+          <label for="pamount">amount</label>
+          <input type="text" id="pamount" name="pamount" value="" placeholder="Amount">
+        </div>
+
+        <div class="right">
+          <label for="punit">unit</label>
+          <input type="text" id="punit" name="punit" value="" placeholder="Unit, (e.g. g)">
+        </div>
+      </div>
+
+      <div class="right">
+        <label for="paddress">address</label>
+        <div class="addPlus">
+          <input type="text" id="paddress" name="paddress" value="" placeholder="Store address if you are adding new store, or url to product page">
+
+          <span class="plus icons shrinkedIcon"></span>
+          <span class="minus icons shrinkedIcon"></span>
+        </div>
+      </div>
+    </fieldset>
+  {{/eq}}
+</div>

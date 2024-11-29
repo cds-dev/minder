@@ -1,0 +1,325 @@
+@use "../fonts/fonts" as f;
+@use "../general/colors" as c;
+@use "../general/mixins" as *;
+
+.listAll {
+  margin-top: 7rem;
+
+  .displayStyleWrapper {
+    text-align: right;
+    margin-top: 1rem;
+  }
+
+  .displayStyle {
+    background: #1b1b31;
+    display: inline-flex;
+    height: 3rem;
+    align-items: center;
+    padding-inline: 1rem;
+    border-radius: .3rem;
+    cursor: pointer;
+  }
+
+  .displayStyle.active {
+    background: #070714;
+  }
+}
+
+.displayGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 1rem;
+  margin-block: 2rem;
+  justify-items: center;
+
+
+  .calendar {
+    width: 100%;
+
+    a { // this was making the table spread beyond the grid
+      width: 1rem;
+      height: 1rem;
+      margin: unset;
+    }
+
+    table {
+      table-layout: fixed;
+      width: 100%;
+    }
+
+    td, th {
+    }
+
+  }
+
+
+  a {
+    display: inline-flex;
+    width: 14rem;
+    height: 14rem;
+    margin: 1rem;
+  }
+
+  .itemCard {
+    display: inline-flex;
+    background: #070714;
+    color: #070714;
+    border-radius: .3rem;
+    height: 16rem;
+    width: 16rem;
+    //padding: 1rem;
+    position: relative;
+    justify-content: center;
+    overflow: hidden;
+
+    // div::before {
+    //   position: relative;
+    //   left: 29%;
+    // }
+
+    img {
+    //   color: #070714;
+    //   display: block;
+      width: 14rem;
+    }
+  }
+
+  .itemName, .made, .rotate {
+    position: absolute;
+    background-color: #07071488;
+    padding: 1rem;
+    z-index: 1;
+    color: c.$gold;
+  }
+
+  .made {
+    top: 0rem;
+    left: 0rem;
+    padding-left: 1.4rem;
+    padding-top: 1.4rem;
+    border-bottom-right-radius: .3rem;
+    padding-bottom: .5rem;
+    padding-right: .5rem;
+  }
+
+  .itemName {
+    bottom: 0;
+    right: 1rem;
+    text-align: right;
+    width: calc(100% - 3rem);
+    text-transform: capitalize;
+    // text-overflow: ellipsis;
+    // white-space: nowrap;
+    // overflow: clip;
+  }
+
+  .itemStatus.icons {
+    &::before {
+      color: c.$gold;
+      background: c.$lazyLoad;
+      position: absolute;
+      left: 0;
+      top: 0;
+      border: none;
+    }
+  }
+
+  .notesInsteadOfName {
+    white-space: unset;
+    text-align: justify;
+    left: 0.5rem;
+    top: .5rem;
+    width: calc(100% - 3rem);
+    height: calc(100% - 3.5rem);
+  }
+
+
+}
+
+.itemCard {
+  .cookWrapper {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    top: 0;
+    border-radius: 50%;
+    right: 0;
+    border: solid crimson .1rem;
+    padding: .3rem;
+
+    img {
+      width: 3rem;
+      height: 3rem;
+      z-index: 1;
+      border-radius: 50%;
+      margin: -1rem;
+    }
+  }
+
+  
+}
+
+.itemCard.measurmentsCard {
+  background: transparent;
+  position: relative;
+
+  img {
+    height: 20rem;
+    overflow: clip;
+  }
+
+  .inputMeasures {
+    position: absolute;
+
+    input {
+      width: 1.7rem;
+      background: crimson;
+      padding-left: .1rem;
+      text-align: center;
+    }
+
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  .displayMeasures {
+    background: crimson;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .displayWeight {
+    left: 6.9rem;
+    top: 1.9rem;
+  }
+
+  .displayArm {
+    left: 3rem;
+    top: 6.5rem;
+  }
+
+  .displayChest {
+    left: 9rem;
+    top: 6.5rem;
+  }
+
+  .displayWaist {
+    top: 8.5rem;
+    left: 6.9rem;
+  }
+
+  .displayHhip {
+    top: 9.3rem;
+    left: 5rem;
+  }
+
+  .displayLhip {
+    top: 11rem;
+    left: 4.5rem;
+  }
+
+  .displayLeg {
+    top: 13.5rem;
+    left: 5.45rem;
+  }
+
+  img {
+    background: unset;
+    position: relative;
+    left: -0.5rem;
+  }
+
+  .measurmentsDate {
+    color: c.$gold;
+    padding: .3rem;
+    background: c.$lazyLoad;
+    z-index: -1;
+    border: solid;
+    border-radius: .3rem;
+    position: absolute;
+    left: 0rem;
+  }
+}
+
+table {
+  margin: 2rem 0;
+  width: 100%;
+  border-radius: .2rem;
+  color: c.$gold;
+  border-collapse: separate;
+  border-spacing: 0 1rem;
+
+  .listItem img {
+    height: 8rem;
+    width: 8rem;
+    border: .3rem groove #111;
+    border-radius: .2rem;
+  }
+
+  // thead {
+  //   background-color: c.$pink;
+  //   color: c.$gold;
+  //   font-size: 1.5rem;
+  // }
+
+  // th {
+  //   padding: .5rem 2rem;
+  // }
+
+  tbody tr {
+    background: #070714;
+  }
+
+  td[onclick] {
+    cursor: pointer;
+  }
+
+  .listItem td {
+    padding: 1rem;
+    text-align: center;
+    // height: fit-content;
+    // position: relative;
+    cursor: pointer;
+  }
+}
+
+.quickAddDiary {
+  display: flex;
+  gap: 1rem;
+}
+
+.statusMenu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 14rem;
+  height: 14rem;
+  padding: 1rem;
+  background: c.$lazyLoad;
+  gap: .5rem;
+
+  div.icons {
+    width: 4rem;
+    height: 4rem;
+
+    &::before {
+      align-items: center;
+      height: 4rem;
+      font-size: 3rem;
+      padding: 0;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<div class="homePage">
+  <nav class="mainNav">
+    {{> navs/front}}
+  </nav>
+
+  {{> mains/list/partials/message}}
+
+  <div class="bump splitInHalf">
+    {{>components/calendar}}
+    {{>utils/chooseFood}}
+  </div>
+</div>
+
+<script src="../front/frontPage.js" type="module" defer></script>

@@ -1,0 +1,315 @@
+@use "../fonts/fonts" as f;
+@use "../general/colors" as c;
+@use "../general/mixins" as *;
+
+.showone {
+  .checkBox {
+    display: inline-block;
+    position: relative;
+    top: -.1rem;
+  }
+}
+
+.mainNotes {
+  white-space: pre-wrap
+}
+
+.showone, .mydiary {
+  .relatedItems {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    a {
+      position: relative;
+    }
+
+    img {
+      border-radius: 5%;
+    }
+
+    .itemName {
+      position: absolute;
+      background: c.$lazyLoad;
+      color: c.$gold;
+      left: 0;
+      bottom: .2rem;
+      padding: .5rem;
+      width: 7rem;
+    }
+
+    .iconNote {
+      overflow: hidden;
+      position: absolute;
+      inset: 0;
+      width: 7rem;
+      height: 7rem;
+      padding: .5rem;
+      background: c.$lazyLoad;
+      cursor: pointer;
+      top: .7rem
+    }
+
+    .item {
+      background: c.$lazyLoad
+    }
+
+    .item span.iconCard {
+
+      &::before {
+        display: block;
+        width: 6rem;
+        height: 6rem;
+        font-size: 5rem;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.showone {
+  margin-top: 7rem;
+
+  .number {
+    @include number;
+    left: -.5rem;
+    justify-content: unset;
+  }
+
+  .titleImage {
+    width: 15rem;
+    height: 15rem;
+    // background: #070714;
+    background: c.$lazyLoad;
+    padding: 1rem;
+
+    img {
+      width: 15rem;
+      height: 15rem;
+    }
+  }
+
+  .mainPIcon {
+    display: block;
+    width: 16rem;
+    height: 16rem;
+  }
+
+  .miscellaneous {
+    margin-block: 2rem;
+    gap: 2rem;
+    display: flex;
+    text-wrap: nowrap;
+    flex-flow: wrap;
+    position: absolute;
+    bottom: -1rem;
+    left: 17.7rem;
+    text-align: right;
+    width: calc(100vw - 20rem);
+  }
+
+  .cookPic {
+    img {
+      width: 4rem;
+      height: 4rem;
+      @include border;
+      border-radius: 50%;
+      position: absolute;
+      top: -.5rem;
+      border-color: c.$pink;
+      right: -1rem;
+      background: c.$lazyLoad;
+      padding: .5rem;
+    }
+  }
+
+  .recipeIngredientsPicture {
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .stepTitle {
+    height: 5rem;
+  }
+
+  .stepTitle div {
+    display: inline-block;
+  }
+
+  .stepOrder {
+    font-size: 1rem;
+
+    .number {
+      position: relative;
+      top: 1rem;
+      left: 0;
+      font-size: 3rem;
+      -webkit-text-stroke: .2rem #260909;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  .stepName {
+    font-size: 1rem;
+    text-transform: capitalize;
+  }
+
+  .splitMain {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+  }
+
+  .singleElement {
+    width: 0;
+    position: relative;
+    left: 20%;
+    height: 6rem;
+    @include border;
+    padding: 0;
+    border-radius: unset;
+    border-color: c.$pink;
+
+    div {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+      width: max-content;
+    }
+  }
+
+  // .icons::before {
+  //   display: unset;
+  // }
+
+  .stepRef.number {
+    position: relative;
+    top: 1.4rem;
+    left: 0;
+  }
+
+  .alignRight, .alignLeft {
+    position: absolute;
+  }
+
+  .alignRight {
+    right: calc(50vw - 8rem);
+  }
+
+  .alignLeft {
+    left: calc(50vw - 18rem);
+  }
+
+  .showStepNotes {
+    padding: 1rem;
+    background-color: c.$lazyLoad;
+    font-size: 3.5rem;
+    width: calc(100vw - 4rem);
+  }
+
+  .recipeSteps {
+    margin-bottom: 3rem;
+  }
+
+  .mainNotes p {
+    margin-block: 6rem;
+    // background-color: c.$green;
+    color: c.$gold;
+    @include border;
+    white-space: pre-line;
+  }
+
+  .recipeAlert {
+    text-align: left;
+    margin-block: 1rem;
+    background: c.$pink;
+    color: c.$gold;
+    display: flex;
+    align-items: center;
+    border: c.$gold .1rem solid;
+    color: c.$gold;
+    border-radius: 1rem;
+  }
+
+  .time {
+    margin-left: .2rem;
+  }
+
+  .mainStatus::before {
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media only screen and (min-width: 19rem) {
+  .showone {
+    .number {
+      right: -1rem;
+    }
+
+    .stepOrder {
+      font-size: 2rem;
+
+      .number {
+        font-size: 5rem;
+        -webkit-text-stroke: .25rem #260909;
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+
+    .stepName {
+      font-size: 2rem;
+    }
+
+    .showStepNotes {
+      font-size: 1.5rem;
+      border: .1rem solid c.$pink;
+    }
+
+    .alignRight {
+      right: -1.8rem;
+    }
+
+    .alignLeft {
+      left: -2rem;
+    }
+
+
+
+    .nameOfOne {
+      display: grid;
+      grid-template-columns: 18rem 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 1rem;
+      position: relative;
+    }
+
+    .titleImage {
+      grid-row: 1/3;
+    }
+
+    .recipeAlert {
+      width: 10rem;
+    }
+  }
+}
+
+
+.showonestory {
+  .mainNotes {
+    margin-top: 0;
+  }
+}

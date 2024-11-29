@@ -1,0 +1,42 @@
+@use "../fonts/fonts" as f;
+@use "../general/colors" as c;
+@use "../general/mixins" as *;
+
+.box {
+  @include border;
+}
+
+.greenBorder, .greenBorder::before {
+  border-color: c.$green !important;
+}
+
+.colorGreen, .colorGreen::before {
+  color: c.$green;
+}
+
+// .yellowBorder, .yellowBorder::before {
+// }
+
+// .colorGreen, .colorGreen::before {
+//   border-color: c.$gold !important;
+// }
+
+.colorYellow {
+  color: c.$gold;
+}
+
+.pinkBorder, .pinkBorder::before {
+  border-color: c.$pink !important;
+}
+
+.colorPink, .colorPink::before {
+  color: c.$pink;
+}
+
+.blueBorder, .blueBorder::before {
+  border-color: c.$blue !important;
+}
+
+.colorBlue, .colorBlue::before {
+  color: c.$blue;
+}

@@ -1,0 +1,235 @@
+{{!-- {{#ne dom 'diary'}} --}}
+<div class="displayGrid">
+
+  {{#eq dom 'kanban item monitor'}}
+    {{> mains/list/partials/statuses}}
+  {{/eq}}
+
+  {{#eq dom 'story diary bio food measurments period stool'}}
+    {{> components/calendar}}
+  {{/eq}}
+
+  {{#eq dom 'measurments'}}
+    <div class="itemCard measurmentsCard">
+      <a>
+        <img src="/imgs/measurments.svg" alt="measurments">
+        
+        <form action="/diary/submit/measurments" method="POST">
+          <div class="inputMeasures displayWeight">
+            <input type="number" inputmode="numeric" pattern="[0-9]*" placeholder="kg" title="weight" id="weight" name="weight">
+          </div>
+
+          <div class="inputMeasures displayArm">
+            <input type="number" inputmode="numeric" pattern="[0-9]*" placeholder="arm" title="arm" id="arm" name="arm">
+          </div>
+
+          <div class="inputMeasures displayChest">
+            <input type="number" inputmode="numeric" pattern="[0-9]*" placeholder="ch" title="chest" id="chest" name="chest">
+          </div>
+
+          <div class="inputMeasures displayWaist">
+            <input type="number" inputmode="numeric" pattern="[0-9]*" placeholder="wa" title="waist" id="waist" name="waist">
+          </div>
+
+          <div class="inputMeasures displayHhip">
+            <input type="number" inputmode="numeric" pattern="[0-9]*" placeholder="hh" title="high hip" id="hhip" name="hhip">
+          </div>
+
+          <div class="inputMeasures displayLhip">
+            <input type="number" inputmode="numeric" pattern="[0-9]*" placeholder="lh" title="low hip" id="lhip" name="lhip">
+          </div>
+
+          <div class="inputMeasures displayLeg">
+            <input type="number" inputmode="numeric" pattern="[0-9]*" placeholder="leg" title="leg" id="leg" name="leg">
+          </div>
+
+          <input type="submit" value="save">
+        </form>
+
+        <div class="measurmentsDate">
+          {{date}}
+        </div>
+      </a>
+    </div>
+  {{/eq}}
+
+  {{#eq dom 'stool'}}
+    {{> components/poop}}
+  {{/eq}}
+
+  {{#ne dom 'bio food measurments period stool diary'}}
+  {{#each data}}
+    <div class="itemCard" tabindex="{{inc @index}}" {{#eq ../dom 'kanban'}}draggable="true"{{/eq}}>
+      <a href="/show/{{../dom}}/{{_id}}" title="{{name}}">
+
+        {{#if icon}}
+          <span class="{{picture}} {{#eq ../dom 'story'}}laika{{/eq}}
+          {{!-- {{#eq ../dom 'diary'}}diary{{/eq}} --}}
+           icons iconCard">
+          </span>
+        {{else}}
+
+          <img src="{{picture}}" alt="{{name}}" style="width: 14rem;">
+        {{/if}}
+
+        <div class="itemName ellipsis {{#eq ../dom 'story diary'}}notesInsteadOfName{{/eq}}">
+        {{name}}{{#eq ../dom 'story diary'}}{{notes}}{{/eq}}</div>
+        {{#if number}}
+          <div class="made">
+            {{#if rotation}}
+              &#10004;
+            {{/if}} {{number}}
+          </div>
+        {{/if}}
+
+        {{#if status}}
+          <div class="itemStatus icons {{status.picture}}"></div>
+        {{/if}}
+      </a>
+
+      {{#if cook}}
+        {{#ne ../dom 'chef'}}
+        <div class="cookWrapper">
+          <a href="/show/chef/{{cook._id}}">
+            <img src="{{cook.picture}}" alt="{{cook.name}}" titile="{{cook.name}}">
+          </a>
+        </div>
+        {{/ne}}
+      {{/if}}
+    </div>
+    {{!-- ne bio food measurments period stool diary --}}
+  {{/each}}
+  {{/ne}}
+
+  {{#eq dom 'diary bio food measurments period stool'}}
+    {{#each data}}
+
+      {{#eq variety 'stool'}}
+        <a href="/show/{{variety}}/{{_id}}" title="stool">
+          <div class="stoolCard box" style="border-color: {{stool.color}};" data-time="{{time}}">
+            <p class="cardName">{{date}}</p>
+            <div>
+              <img src="/imgs/diary/{{inc stool.shape}}.png" alt="shape">
+            </div>
+            <div class="columnar">
+              <div class="hardness" title="hardness">
+                <div class="barWrapper">
+                  <div class="bar" style="grid-row: -1 / -{{inc stool.hardness}};">
+                    {{inc stool.hardness}}
+                  </div>
+                </div>
+                <p>H: </p>
+              </div>
+              <div class="quantity" title="quantity">
+                <div class="barWrapper">
+                  <div class="bar" style="grid-row: -1 / -{{inc stool.quantity}};">
+                    {{inc stool.quantity}}
+                  </div>
+                </div>
+                <p>Q: </p>
+              </div>
+              <div class="satisfaction" title="satisfaction">
+                <div class="barWrapper">
+                  <div class="bar" style="grid-row: -1 / -{{inc stool.satisfaction}};">
+                    {{inc stool.satisfaction}}
+                  </div>
+                </div>
+                <p>S: </p>
+              </div>
+            </div>
+          </div>
+        </a>
+      {{/eq}}
+
+      {{#eq variety 'minder'}}
+        <a href="{{site}}" target="_blank">
+          <div class="minderCard " data-time="{{time}}">
+            <p class="cardName">{{name}}</p>
+            <div>
+              <img src="{{picture}}" alt="{{name}}">
+            </div>
+          </div>
+        </a>
+      {{/eq}}
+
+      {{#eq variety 'period' data-time="{{time}}"}}
+        <div class="periodCard box pinkBorder">
+          <a href="/show/{{../dom}}/{{_id}}" title="{{variety}}">
+            <p class="cardName">{{date}}</p>
+            <div>
+              <img src="/imgs/diary/fallen-to-the-communists.png" alt="">
+            </div>
+          </a>
+        </div>
+      {{/eq}}
+
+{{!-- TODO: link to recipe itself or page of the calendar entry... --}}
+      {{#eq variety 'food'}}
+        <div class="foodCard box blueBorder" data-time="{{time}}">
+          <p class="cardName">{{date}} {{food.name}}</p>
+          <div>
+            <a href="/show/{{food.variety}}/{{food._id}}">
+              <img src="{{food.picture}}" alt="food">
+            </a>
+          </div>
+        </div>
+      {{/eq}}
+
+      {{#eq variety.name 'story' data-time="{{time}}"}}
+      <a href="/show/{{variety.name}}/{{_id}}">
+        <div class="storyCard box greenBorder">
+          <div class="relativize">
+            <p class="cardName">{{date}}</p>
+            <img src="/imgs/diary/fidel.png" alt="">
+            <div class="fullEntry">{{notes}}</div>
+          </div>
+        </div>
+      </a>
+      {{/eq}}
+
+
+      {{#eq variety 'diary story'}}
+      <a href="/show/{{variety}}/{{_id}}">
+        <div class="storyCard box greenBorder">
+          <div class="relativize">
+            <p class="cardName">{{date}}</p>
+            {{#if icon}}
+            <span class="icons {{variety}} iconCard"></span>
+            {{else}}
+            <img src="{{picture}}" alt="{{variety}}">
+            {{/if}}
+            <div class="fullEntry">{{notes}}</div>
+          </div>
+        </div>
+      </a>
+      {{/eq}}
+
+      {{#eq variety 'cramp headache jointache chestache bellyache backache shivers drank'}}
+        <div class="itemCard box yellowBorder colorYellow">
+          <a href="/show/{{variety}}/{{_id}}" title="{{variety}}">
+            <span class="icons iconCard {{#eq variety 'bellyache'}}bAche{{/eq}}{{#eq variety 'cramp'}}cramp{{/eq}}{{#eq variety 'headache'}}hAche{{/eq}}{{#eq variety 'jointache'}}jAche{{/eq}}{{#eq variety 'chestache'}}cAche{{/eq}}{{#eq variety 'backache'}}lbFAche{{/eq}}{{#eq variety 'shivers'}}shivers{{/eq}}{{#eq variety 'drank'}}drank{{/eq}}"></span>
+          </a>
+        </div>
+      {{/eq}}
+
+      {{#eq variety 'measurments'}}
+        <div class="itemCard measurmentsCard">
+          <a href="/show/{{variety}}/{{_id}}" title="{{variety}} for {{date}}">
+            <img src="/imgs/measurments.svg" alt="measurments">
+            <div class="displayMeasures displayWeight">{{measurments.weight}}</div>
+            <div class="displayMeasures displayArm">{{measurments.arm}}</div>
+            <div class="displayMeasures displayChest">{{measurments.chest}}</div>
+            <div class="displayMeasures displayWaist">{{measurments.waist}}</div>
+            <div class="displayMeasures displayHhip">{{measurments.hhip}}</div>
+            <div class="displayMeasures displayLhip">{{measurments.lhip}}</div>
+            <div class="displayMeasures displayLeg">{{measurments.leg}}</div>
+            
+            <div class="measurmentsDate">
+              {{date}}
+            </div>
+          </a>
+        </div>
+      {{/eq}}
+    {{/each}}
+  {{/eq}}
+</div>

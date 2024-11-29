@@ -1,0 +1,14 @@
+@use "../fonts/fonts" as *;
+@use "../general/colors" as c;
+@use "../general/mixins" as m;
+
+.searcBox {
+  position: sticky;
+  top: 6rem;
+  z-index: 2;
+
+  input {
+    width: calc(100% - 1rem);
+    border-bottom: .3rem solid;
+  }
+}

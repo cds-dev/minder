@@ -1,0 +1,25 @@
+{{!-- THISIS: PICTURE --}}
+<div class="right relativize">
+  <label for="picture">Picture url</label>
+
+  <input
+    type="text"
+    id="picture"
+    name="picture"
+    value="{{data.picture}}">
+    <div class="fileButtons">
+      <button id="takePhoto" type="button" class="icons photo"></button>
+      <input type="file" name="uploadPicture" id="uploadPicture">
+      <button id="uploadPhoto" type="button" class="icons upload"></button>
+    </div>
+    <div class="camera">
+      <video class="video" autoplay></video>
+      <button class="capture" type="button">Capture</button>
+      <canvas class="canvas" style="display:none;"></canvas>
+    </div>
+</div>
+
+{{!-- the use of two input fields is cause
+[type="file"] isn't editable by user, and
+[type="text"] doesn't allow uploads,
+and both are needed --}}

@@ -1,0 +1,43 @@
+{{#eq dom 'diary'}}
+  <div class="relatedItems">
+    {{#each data}}
+      <div class="item relativize">
+      {{#eq variety 'food'}}
+        <a href="/show/{{food.variety}}/{{food._id}}">
+          <div class="itemCard">
+            <img src="{{food.picture}}" alt="{{food.name}}" style="width: 8rem; height: 8rem">
+            <div class="itemName hide">
+              {{food.name}}
+            </div>
+          </div>
+        </a>
+      {{/eq}}
+
+      {{#eq variety 'minder'}}
+        <a href="{{site}}" {{#eq minder.type 'urlmonitor'}}target="_blank"{{/eq}}>
+          <div class="itemCard">
+            <img src="{{picture}}" alt="{{name}}" style="width: 8rem; height: 8rem">
+          </div>
+          <div class="itemName hide">{{name}}</div>
+        </a>
+      {{/eq}}
+
+      {{#eq variety 'stool'}}
+        <span class="icons iconCard stool"></span>
+      {{/eq}}
+
+      {{#eq variety 'story diary note'}}
+        <a href="/show/{{variety}}/{{_id}}">
+          {{#if icon}}<span class="icons {{variety}} iconCard"></span>{{else}}<img src="{{picture}}" alt="story" style="width: 8rem; height: 8rem; display: block;">{{/if}}
+          {{#if name}}<div class="itemName">{{name}}</div>{{else}}<div class="iconNote">{{notes}}</div>{{/if}}
+        </a>
+      {{/eq}}
+
+      {{#eq variety 'drank bellyache headache period chestache joinache backache shivers cramp'}}
+        <span class="icons iconCard {{variety}}"></span>
+      {{/eq}}
+      {{#eq variety 'measurments'}}{{/eq}}
+      </div>
+    {{/each}}
+  </div>
+{{/eq}}

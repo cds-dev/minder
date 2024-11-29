@@ -1,0 +1,18 @@
+{{#eq dom 'diary'}}
+<div class="measModalContainer hide">
+  <modal class="measurmentsWrapper">
+    <div class="measImage"><img src="/imgs/measurments.svg" alt="splayed"></div>
+    <form action="/diary/submit/measurments" class="measurmentsModal qdiary">
+      <input type="number" name="weight" id="weight" value="78">
+      <input type="number" name="arm" id="arm" value="31">
+      <input type="number" name="chest" id="chest" value="99">
+      <input type="number" name="waist" id="waist" value="82">
+      <input type="number" name="hhip" id="hhip" value="105">
+      <input type="number" name="lhip" id="lhip" value="108">
+      <input type="number" name="leg" id="leg" value="62">
+
+      <input type="submit" value="save">
+    </form>
+  </modal>
+</div>
+{{/eq}}

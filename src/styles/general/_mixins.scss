@@ -1,0 +1,54 @@
+@use "../fonts/fonts" as f;
+@use "../general/colors" as c;
+
+@mixin border {
+  border: .3rem solid;
+  border-radius: .2rem;
+  padding: 1rem;
+}
+
+@mixin circle {
+  border: .2rem solid;
+  border-radius: 50%;
+  padding: .2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  display: inline-grid;
+  justify-content: center;
+  align-items: center;
+  background: c.$lazyLoad;
+}
+
+@mixin number {
+  font-size: 5rem;
+  @include border;
+  padding: 0;
+  background: #dc143c;
+  position: absolute;
+  top: -5rem;
+  right: -1rem;
+  -webkit-text-stroke: .25rem c.$black;
+  border-color: c.$black;
+  background: c.$pink;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin spread {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button {
+  background-color: c.$pink;
+  border-radius: .3rem;
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
+  border: none;
+}

@@ -1,0 +1,179 @@
+@use "../fonts/fonts" as f;
+@use "../general/colors" as c;
+@use "../general/mixins" as *;
+
+fieldset {
+  border: solid;
+  margin-top: 1rem;
+}
+
+// fieldset#stepsWrapper, fieldset#stepsWrapper legend {
+//   border: none;
+// }
+
+.subBtn {
+  @include border;
+  border-width: 2px;
+  border-color: c.$pink;
+  padding: .3rem;
+  width: 4.8rem;
+  height: 4.8rem;
+  position: fixed;
+  top: 2.7rem;
+  right: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: .5rem;
+  z-index: 3;
+}
+
+input[type="submit"] {
+  background-color: c.$pink;
+  @include border;
+  border-radius: .3rem;
+  border-width: 1px;
+  padding: 0;
+  width: 4.7rem;
+  height: 4.7rem;
+  color: c.$gold;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+input, textarea {
+  width: 100%;
+  font-size: 1rem;
+  height: 1.3rem;
+  border: solid transparent;
+  background-color: c.$ffBcg;
+  color: c.$gold;
+  padding-left: .5rem;
+  border-radius: .3rem;
+}
+
+textarea {
+  height: 6rem;
+  resize: vertical;
+  height: auto;
+  overflow-y: auto;
+}
+
+.snoozeMe {
+  display: grid;
+  grid-template-columns: 5rem auto;
+  gap: 3rem;
+  align-items: center;
+}
+
+.fileButtons {
+  position: absolute;
+  top: .7rem;
+  right: .5rem;
+  
+  button.icons {
+    background: c.$lazyLoad;
+  }
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label {
+  display: inline-block;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  margin: .2rem; // misc on recipe
+
+  &::after {
+    content: ': ';
+  }
+}
+
+.nAfter::after {
+  content: '';
+}
+
+.labelify {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  padding: 1rem 0 .5rem;
+  // display: block; suggest on edit recipe
+
+  &::after {
+    content: ': ';
+  }
+}
+
+.checkBox {
+  @include border;
+  width: 1.3rem;
+  height: 1.3rem;
+  background: c.$lazyLoad;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: .2rem;
+  border-width: 1px;
+  position: relative;
+  top: .5rem;
+}
+
+input[type="checkbox"]:checked + label,
+input[type="radio"]:checked + label {
+  background-color: c.$pink;
+}
+
+.addPlus {
+  display: grid;
+  grid-template-columns: auto 3rem 3rem;
+  gap: 1rem;
+  margin-bottom: .5rem;
+  align-items: center;
+
+  span {  // moved some to mixin
+    @include button;
+    margin-left: 1.5rem;
+    padding: .3rem;
+    width: 2rem;
+    height: 2rem;
+    // position: relative;
+    // top: -.4rem;
+
+    
+
+    &.icons::before {
+      border-bottom: black solid 1px;
+      border-right: black solid 1px;
+      height: 2rem;
+    }
+  }
+}
+
+
+#notePlus {
+  grid-template-columns: 1fr;
+  position: relative;
+
+  span.plus {
+    position: absolute;
+    right: 0;
+    top: .5rem;
+  }
+
+  span.minus {
+    position: absolute;
+    right: 0;
+    top: 3.5rem;
+  }
+}
+
+legend {
+  @include border;
+  font-size: 1.5rem;
+  background-color: c.$black;
+  padding: .5rem;
+}

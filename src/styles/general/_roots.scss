@@ -1,0 +1,141 @@
+@use "../fonts/fonts" as *;
+@use "../general/colors" as c;
+@use "../general/mixins" as m;
+
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+}
+
+nav {
+  width: 99%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(4.6rem, 1fr));
+  gap: 1rem;
+  position: fixed;
+  z-index: 2;
+  margin-top: -6.5rem;
+
+  a {
+    color: c.$gold;
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+    background: c.$lazyLoad;
+
+    span {
+      display: inline-block;
+      height: 4rem;
+      width: 4rem;
+    }
+  }
+}
+
+.submenu form, .statusMenu form {
+  position: relative;
+  width: 4.1rem;
+  height: 4.1rem;
+
+  button {
+    margin: 0;
+    padding: 0;
+  }
+
+  .number {
+    position: relative;
+    bottom: 1.5rem;
+    left: .5rem;
+  }
+}
+
+.greenDot {
+  display: inline-block;
+  background: c.$green;
+  background: radial-gradient(at right top, #9fa5b0 21%, #218e51 38%, #3cdf84 100%);
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  position: absolute;
+  top: -.2rem;
+  box-shadow: .2rem .2rem .7rem darkmagenta, .2rem -.2rem .7rem blue, -.2rem .2rem .7rem lemonchiffon, -.2rem -.2rem .7rem;
+}
+
+.redDot {
+  display: inline-block;
+  background: radial-gradient(at right top, #ff41b5 21%, crimson 38%, #000 100%);
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  position: absolute;
+  top: -0.2rem;
+  box-shadow: .2rem .2rem .5rem #000,.2rem -0.2rem .5rem #000,-0.2rem .2rem .5rem #000,-0.2rem -0.2rem .5rem inset;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+h1 {
+  text-transform: capitalize;
+}
+
+h2 {
+  font-family: $cursive;
+  font-size: 2rem;
+  text-align: right;
+  position: relative;
+  top: -2.8rem;
+
+  &::before,
+  &::after {
+    position: relative;
+    top: .5rem;
+  }
+
+  &::before {
+    content: '== ';
+  }
+
+  &::after {
+    content: ' ==';
+  }
+}
+
+@media only screen and (min-width: 19rem) {
+  h2 {
+    font-size: 4rem;
+    top: -5.2rem;
+  }
+}
+
+.singleChoice {
+  .number {
+    z-index: 1;
+    position: absolute;
+    top: .5rem;
+    right: .7rem;
+    border-radius: 50%;
+    background: crimson;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cookPic img {
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    // top: 0.5rem;
+    // left: 0.5rem;
+    border-radius: 50%;
+    border: crimson 1px solid;
+    padding: .3rem;
+  }
+}

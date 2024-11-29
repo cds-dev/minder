@@ -1,0 +1,23 @@
+{{#ne dom 'monitor kanban store'}}
+{{#if data.notes}}
+  <section class="notesSection">
+    <div class="mainNotes">
+      {{data.notes}}
+    </div>
+  </section>
+{{/if}}
+{{/ne}}
+
+{{#eq dom 'kanban store'}}
+  {{#if data.notes.length}}
+    <section class="notesSection">
+      {{!-- {{#if length}} --}}
+      {{#each data.notes}}
+        <div class="mainNotes">
+          <p>{{this}}</p>
+        </div>
+      {{/each}}
+      {{!-- {{/if}} --}}
+    </section>
+  {{/if}}
+{{/eq}}

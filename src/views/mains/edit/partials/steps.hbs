@@ -1,0 +1,157 @@
+{{> mains/edit/partials/ingredients}}
+
+{{#eq dom 'recipe secondary'}}
+  <fieldset id="stepsWrapper secondThis">
+    <legend>Steps</legend>
+    {{#if data.steps}}
+      {{#each data.steps}}
+
+        <div id="positional" class="relativize">
+          <span class="steps icons cloneSteps"></span>
+
+          <div class="stepOrder" id="step{{_id}}">
+            Step <span class="orderNumber">{{inc @index}}</span>:
+          </div>
+
+          <div class="stepName right">
+            <label for="stepName">Name</label>
+            <input 
+              type="text"
+              name="stepName"
+              id="stepName"
+              value="{{name}}">
+          </div>
+
+          <div class="stepTime">
+            <label for="duration">Duration</label>
+            {{#if range}}
+              {{#each range}}
+              <div class="timeUnitWrapper addPlus right" id="timePlus">
+                {{> mains/edit/partials/durationUnits}}
+                <span class="plus icons shrinkedIcon"></span>
+                {{#if @first}}<span class="icons shrinkedIcon"></span>{{/if}}
+              </div>
+              {{/each}}
+            {{else}}
+              <div class="timeUnitWrapper addPlus right" id="timePlus">
+              {{> mains/edit/partials/durationUnits}}
+              <span class="plus icons shrinkedIcon"></span>
+              <span class="icons shrinkedIcon"></span>
+            </div>
+            {{/if}}
+          </div>
+
+          <label for="element">Element</label>
+          <label for="amount" class="nAfter"></label>
+          <label for="unit" class="nAfter"></label>
+          {{#each elements}}
+            <div class="substep addPlus right" id="substep">
+              <input type="text" id="element" name="elementRef" value="{{name}}" class="{{elementRef}}" data-ref="{{element}}" list="substeps">
+              <p>
+                <input type="text" id="amount" name="amount" value="" {{#ne elementRef "Food"}}class="hide"{{/ne}}>
+              </p>
+              <p>
+                <input type="text" id="unit" name="unit" value="" {{#ne elementRef "Food"}}class="hide"{{/ne}} list="measurements">
+              </p>
+            <span class="plus icons shrinkedIcon"></span>
+            {{#if @first}}<span class="icons shrinkedIcon"></span>{{/if}}
+            {{#unless @first}}<span class="minus icons shrinkedIcon"></span>{{/unless}}
+            </div>
+          {{/each}}
+          {{#unless elements}}
+            <div class="substep addPlus right" id="substep">
+              <input type="text" id="element" name="elementRef" list="substeps">
+              <p>
+                <input type="text" id="amount" name="amount" value="" {{#ne elementRef "Food"}}class="hide"{{/ne}}>
+              </p>
+              <p>
+                <input type="text" id="unit" name="unit" value="" {{#ne elementRef "Food"}}class="hide"{{/ne}} list="measurements">
+              </p>
+            <span class="plus icons shrinkedIcon"></span>
+            {{#if @first}}<span class="icons shrinkedIcon"></span>{{/if}}
+            {{#unless @first}}<span class="minus icons shrinkedIcon"></span>{{/unless}}
+            </div>
+          {{/unless}}
+          {{!-- {{#unless elements}} --}}
+
+          <div class="splitInHalf">
+            <div class="right">
+              <label for="temperatureS">Cook at</label>
+              <input type="text" name="temperatureS" id="temperatureS"
+              value="{{#ne temperatureS 0}}{{temperatureS}}{{/ne}}">
+            </div>
+            <div class="right">
+              <label for="temperatureI">Internal t</label>
+              <input type="text" name="temperatureI" id="temperatureI"
+              value="{{#ne temperatureI 0}}{{temperatureI}}{{/ne}}">
+            </div>
+          </div>
+
+          <div class="stepNotes">
+            <label for="stepNotes">Notes</label>
+            <div class="">
+              <textarea name="stepNotes" id="stepNotes">{{stepNotes}}</textarea>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+
+    {{else}} {{!-- no step data --}}
+
+      <div id="positional" class="relativize">
+        <span class="steps icons cloneSteps"></span>
+
+        <div class="stepOrder">
+          Step <span class="orderNumber">{{inc @index}}</span>
+        </div>
+
+        <div class="stepName right">
+          <label for="stepName">Name</label>
+          <input 
+            type="text"
+            name="stepName"
+            id="stepName">
+        </div>
+
+        <div class="stepTime">
+          <label for="duration">Duration</label>
+          <div class="timeUnitWrapper addPlus right" id="timePlus">
+            {{> mains/edit/partials/durationUnits}}
+            <span class="plus icons shrinkedIcon"></span>
+            <span class="icons shrinkedIcon"></span>
+          </div>
+        </div>
+
+        <label for="element">Element</label>
+        <label for="amount" class="nAfter"></label>
+        <label for="unit" class="nAfter"></label>
+        <div class="substep right addPlus" id="substep">
+          <input type="text" id="element" name="elementRef" list="substeps" class="{{elementRef}}">
+          <p><input type="text" id="amount" name="amount" value="" class="hide"></p>
+          <p><input type="text" id="unit" name="unit" value="" list="measurements" class="hide"></p>
+          <span class="plus icons shrinkedIcon"></span>
+          {{#if @first}}<span class="icons shrinkedIcon"></span>{{/if}}
+          <span class="icons shrinkedIcon"></span>
+        </div>
+
+        <div class="splitInHalf">
+          <div class="up right">
+            <label for="temperatureS">Cook at</label>
+            <input type="text" name="temperatureS" id="temperatureS">
+          </div>
+          <div class="up right">
+            <label for="temperatureI">Internal t</label>
+            <input type="text" name="temperatureI" id="temperatureI">
+          </div>
+        </div>
+
+        <div class="stepNotes">
+          <label for="stepNotes">Notes</label>
+          <div class="up right">
+            <textarea name="stepNotes" id="stepNotes"></textarea>
+          </div>
+        </div>
+      </div>
+    {{/if}}
+  </fieldset>
+{{/eq}}

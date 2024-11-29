@@ -1,0 +1,12 @@
+{{!-- THISIS: NAME --}}
+<div class="right">
+  <label for="name">
+    {{#ne dom 'flash kanban'}}{{!-- ------------}}{{dom}} name{{/ne}}{{!-- -------------------}}{{#eq dom 'flash'}}Question{{/eq}}{{!-- ----}}{{#eq dom 'kanban'}}New idea{{/eq}}</label>
+
+  <input
+    type="text"
+    id="name"
+    name="name"
+    required value="{{data.name}}"
+    autofocus="autofocus">
+</div>

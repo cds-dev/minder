@@ -1,0 +1,35 @@
+{{#ne dom 'monitor category'}}
+<fieldset>
+  <div class="right">
+    {{#ne dom 'kanban flash'}}<label for="notes">Notes</label>{{/ne}}
+    {{#eq dom 'flash'}}<label for="notes">Answer</label>{{/eq}}
+    {{#eq dom 'kanban'}}<label for="notes">Details</label>{{/eq}}
+
+    {{!-- {{#ne dom 'monitor'}} --}}
+      {{#if data.notes}}
+      <div class="addPlus" id="notePlus">
+        {{#each data.notes}}
+          <textarea id="notes" name="notes">{{this}}</textarea>
+          {{#eq dom 'note'}}
+            <a href="/markup/" target="_blank">Markup help</a>
+          {{/eq}}
+
+          <span class="plus icons shrinkedIcon notesIcon"></span>
+          <span class="minus icons shrinkedIcon notesIcon"></span>
+        {{/each}}
+      </div>
+      {{else}}
+      <div class="addPlus" id="notePlus">
+        <textarea id="notes" name="notes"></textarea>
+        {{#eq dom 'note'}}
+          <a href="/markup/" target="_blank">Markup help</a>
+        {{/eq}}
+
+        <span class="plus icons shrinkedIcon notesIcon"></span>
+      </div>
+      {{/if}}
+    {{!-- {{/ne}} --}}
+
+  </div>
+</fieldset>
+{{/ne}}{{!-- cron category - no notes... --}}

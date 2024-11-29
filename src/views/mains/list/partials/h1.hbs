@@ -1,0 +1,4 @@
+<h1>All
+  <span class="total"> {{total}} </span>
+  {{#eq dom 'diary'}}diaries{{/eq}}{{!--Comment ----------}}{{#eq dom 'story'}}stories{{/eq}}{{!-- Comment ---------}}{{data.category}}{{!-- Comment -------------------------}}{{#ne dom 'story diary kanban'}}{{dom}}{{/ne}}{{!-- C --}}{{#eq dom 'kanban'}} {{title}}{{/eq}}{{!-- Comment -----}}{{#eq dom 'flash'}}card{{/eq}}{{!-- Comment ------------}}{{#ne dom 'diary story kanban'}}s{{/ne}}
+</h1>

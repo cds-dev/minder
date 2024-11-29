@@ -1,0 +1,17 @@
+<div class="addToList">
+  <modal class="selectList">
+    {{#each lists}}
+      <div class="selectItem" data-select="{{_id}}">
+        <img src="{{picture}}" alt="{{name}}">
+        <div class="listItemName">{{name}}</div>
+      </div>
+    {{/each}}
+  </modal>
+</div>
+
+
+{{#each included}}
+  <div class="preselect hide">
+    <p class="pre-name" data-id="{{_id}}">{{name}}</p>
+  </div>
+{{/each}}

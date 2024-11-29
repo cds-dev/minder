@@ -1,0 +1,37 @@
+{{#eq dom 'flash study'}}
+
+  <div class="studySession">
+    <div class="flashCard" id="{{data._id}}">
+      <div class="flashQestion relativize">
+        <div class="flashQuestion">{{data.name}}</div>
+
+        <form class="showanswer" action="" method="get">
+          <button class="icons showoff"></button>
+        </form>
+      </div>
+
+
+      <div class="hide answerMe">
+        <div class="controls">
+          <form class="less" action="" method="get">
+            <button class="icons showFewer"></button>
+          </form>
+
+          <div class="grade">{{data.grade}}</div>
+
+          <form class="more" action="" method="get">
+            <button class="icons showMore"></button>
+          </form>
+
+          <form></form>
+          <form class="shownext" action="" method="get">
+            <button class="icons showNext"></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/eq}}
+
+
+<script src="../../front/study.js" type="module" defer></script>

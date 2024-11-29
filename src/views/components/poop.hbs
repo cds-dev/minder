@@ -1,0 +1,146 @@
+<div class="addStool">
+  <form action="" method="POST">
+    <fieldset class="box pinkBorder">
+      <legend class="box pinkBorder">Save new poo</legend>
+
+      <div class="stHardness">
+        <label for="hardness">Hardness</label>
+        <div class="scale">
+          <span class="grade">soft</span>
+          <span class="grade">2</span>
+          <span class="grade">3</span>
+          <span class="grade">4</span>
+          <span class="grade">hard</span>
+        </div>
+        <input type="range" name="hardness" id="hardness" max="4" step="1" value="3">
+      </div>
+
+      <div class="bump4 stSatisfaction">
+        <input type="radio" name="satisfaction" id="sat0" value="0">
+        <label for="sat0" class="star rate nAfter"></label>
+
+        <input type="radio" name="satisfaction" id="sat1" value="1">
+        <label for="sat1" class="star rate nAfter"></label>
+    
+        <input type="radio" name="satisfaction" id="sat2" value="2">
+        <label for="sat2" class="star rate nAfter"></label>
+      </div>
+  
+
+      <div class="bump4 stQuantity">
+        <label for="quantity">Quantity</label>
+        <div class="scale">
+          <span class="grade">wee</span>
+          <span class="grade">2</span>
+          <span class="grade">3</span>
+          <span class="grade">4</span>
+          <span class="grade">lot</span>
+        </div>
+        <input type="range" name="quantity" id="quantity" max="4" step="1">
+      </div>
+
+      <div class="shapeRadiosWrapper  bump4">
+        <label for="shape">Select shape</label>
+
+        <div class="shapeRadios">
+          <div >
+            <input type="radio" name="shape" id="type1" value="1">
+            <label for="type1" class="shapes nAfter type1"></label>
+          </div>
+
+          <div>
+            <input type="radio" name="shape" id="type2" value="2" checked>
+            <label for="type2" class="shapes nAfter type2"></label>
+          </div>
+
+          <div>
+            <input type="radio" name="shape" id="type3" value="3">
+            <label for="type3" class="shapes nAfter type3"></label>
+          </div>
+
+          <div>
+            <input type="radio" name="shape" id="type4" value="4">
+            <label for="type4" class="shapes nAfter type4"></label>
+          </div>
+
+          <div>
+            <input type="radio" name="shape" id="type5" value="5">
+            <label for="type5" class="shapes nAfter type5"></label>
+          </div>
+
+          <div>
+            <input type="radio" name="shape" id="type6" value="6">
+            <label for="type6" class="shapes nAfter type6"></label>
+          </div>
+
+          <div>
+            <input type="radio" name="shape" id="type7" value="7">
+            <label for="type7" class="shapes nAfter type7"></label>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="colorRadiosWrapper bump4">
+        <label class="nAfter">Select color</label>
+        <div class="colorRadios">
+          <div>
+            <input type="radio" name="color" id="c3D0D01" value="3D0D01">
+            <label for="c3D0D01" class="swatches c3D0D01 nAfter"></label>
+          </div>
+
+          <div>
+            <input type="radio" name="color" id="c531202" value="531202" checked>
+            <label for="c531202" class="swatches c531202 nAfter"></label>
+          </div>
+
+          <div>
+            <input type="radio" name="color" id="c6C1702" value="6C1702">
+            <label for="c6C1702" class="swatches c6C1702 nAfter"></label>
+          </div>
+
+          <div>
+            <input type="radio" name="color" id="c892C03" value="892C03">
+            <label for="c892C03" class="swatches c892C03 nAfter"></label>
+          </div>
+
+          <div>
+            <input type="radio" name="color" id="c9C3103" value="9C3103">
+            <label for="c9C3103" class="swatches c9C3103 nAfter"></label>
+          </div>
+
+          <div>
+            <input type="radio" name="color" id="cBC6D03" value="BC6D03">
+            <label for="cBC6D03" class="swatches cBC6D03 nAfter"></label>
+          </div>
+
+          <div>
+            <input type="radio" name="color" id="c8E0407" value="8E0407">
+            <label for="c8E0407" class="swatches c8E0407 nAfter"></label>
+          </div>
+
+          <div>
+            <input type="radio" name="color" id="c6F712B" value="6F712B">
+            <label for="c6F712B" class="swatches c6F712B nAfter"></label>
+          </div>
+      
+        </div>
+      </div>
+
+      <div>
+        <label for="entry">Notes</label>
+        <textarea name="entry" id="entry" style="resize: vertical;"></textarea>
+      </div>
+
+      <input type="submit" value="Save">
+    </fieldset>
+  </form>
+</div>
+
+{{!-- <div class="allDates ">
+  {{#each allDates}}
+    <p>{{this}}</p>
+  {{/each}}
+</div> --}}
+{{!-- 
+<script type="module" src="../../front/diary/stool/start.js" defer></script> --}}

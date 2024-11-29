@@ -1,0 +1,172 @@
+@use "../fonts/fonts" as f;
+@use "../general/colors" as c;
+@use "../general/mixins" as *;
+
+.numberify {
+  font-size: 4rem;
+  -webkit-text-stroke: .25rem #260909;
+  height: 3rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+//.mindersForm {
+  .quickTimeWrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(4.6rem, 1fr));
+    gap: 1rem;
+
+    .selectTimeRange {
+      // margin-block: 1rem .5rem;
+
+      button {
+        @include number;
+        position: unset;
+        font-size: 3rem;
+        color: c.$gold;
+        -webkit-text-stroke: .15rem #260909;
+        // background-color: c.$pink;
+
+      }
+    }
+
+    // input[type="radio"], input[type="checkbox"] {
+    //   position: absolute;
+    //   left: -1rem;
+    //   top: 1rem;
+    // }
+    
+
+    
+
+    label {
+      @include number;
+      position: unset;
+    // width: 3rem;
+    // height: 3rem;
+      font-size: 3rem;
+      -webkit-text-stroke: .15rem #260909;
+  //     width: 0;
+  // padding: unset;
+  // height: 0;
+  // padding: 1.5rem;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // font-size: 4rem;
+    }
+
+    input[name="timeRange"]:checked + label {
+      color: red;
+    }
+  }
+
+  label[for="repeat"] {
+    top: 0;
+    left: 1rem;
+  }
+//}
+
+  
+label.timeCards {
+  background-color: c.$pink;
+}
+
+input[type="reset"] {
+  display: none;
+}
+
+.mindersWrapper {
+  text-align: right;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: grid;
+  gap: .5rem;
+  z-index: 1;
+
+  .minderControls {
+    display: grid;
+    grid-template-columns: 4rem 1fr 4rem;
+    gap: 0.5rem;
+
+    .killMinder, .snoozeMinder {
+      width: 4rem;
+      display: grid;
+      place-content: center;
+      border: 1px solid c.$gold;
+      color: c.$lazyLoad;
+      border-radius: .2rem;
+      height: 4rem;
+  //     margin-top: .5rem;
+      
+      cursor: pointer;
+    }
+
+    .killBtn, .snzBtn {
+      all: unset;
+      font-size: 7rem;
+    }
+
+    .killMinder {
+      background: c.$pink;
+    }
+
+    .snoozeMinder {
+      background: c.$green;
+    }
+  }
+
+  .reminder {
+    border: 1px solid;
+    border-radius: .2rem;
+    padding: .5rem;
+    min-width: 15rem;
+    // margin-block: .5rem;
+    background: c.$lazyLoad;
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: .5rem;
+    text-align: left;
+    width: 25rem;
+  }
+
+  // .minderTitle {
+  //   font-size: 1.2rem;
+  //   font-weight: 900;
+  //   text-transform: capitalize;
+  // }
+
+  // div:has(.minderDesc) {
+  //   width: 47%;
+  // }
+
+  // .minderDesc {
+  //   width: 100%;
+  //   margin-right: -.5rem;
+  //   overflow: clip;
+  // }
+
+  // .minderControls {
+  //   display: grid;
+  //   place-items: center;
+  //   gap: .3rem;
+  //   width: 1.5rem;
+
+  //   div {
+  //     width: 1.3rem;
+  //     height: 1.3rem;
+  //     text-align: center;
+  //     border: 1px solid c.$gold;
+  //     color: blanchedalmond;
+  //   }
+
+  //   .killMinder {
+  //     background: c.$pink;
+  //   }
+
+  //   .snoozeMinder {
+  //     background: c.$green;
+  //   }
+  // }
+}

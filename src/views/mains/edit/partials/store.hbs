@@ -1,0 +1,85 @@
+{{#eq dom 'item ingredient'}}
+  {{#if data.stores.length}}
+    {{#each data.stores}}
+      <fieldset id="storePlus">
+        {{#eq dom 'ingredient'}}
+          <legend>Shopping:</legend>
+        {{/eq}}
+        <div class="right">
+          <label for="storename">store name<span class="redStar">*</span></label>
+
+          <input
+            type="text"
+            id="storename"
+            name="storename"
+            value="{{{store.name}}}"
+            placeholder="Store name"
+            list="stores"
+            >
+        </div>
+
+        <div class="splitIn3rds">
+          <div class="right">
+            <label for="price">price</label>
+            <input type="text" id="price" name="price" value="{{price.value}}" placeholder="Item price">
+          </div>
+
+          <div class="right">
+            <label for="pamount">amount</label>
+            <input type="text" id="pamount" name="pamount" value="{{quantity.value}}" placeholder="Amount">
+          </div>
+
+          <div class="right">
+            <label for="punit">unit</label>
+            <input type="text" id="punit" name="punit" value="{{quantity.unit}}" placeholder="Unit, (e.g. g)">
+          </div>
+        </div>
+
+        <div class="right">
+          <label for="paddress">address</label>
+          <div class="addPlus">
+            <input type="text" id="paddress" name="paddress" value="{{#if address}}{{address}}{{/if}}" placeholder="Store address if you are adding new store, or url to product page">
+
+            <span class="plus icons shrinkedIcon"></span>
+          {{#unless @first}}<span class="minus icons shrinkedIcon"></span>{{/unless}}
+          </div>
+        </div>
+      </fieldset>
+    {{/each}}
+  {{else}}
+    <fieldset id="storePlus">
+      <div class="right">
+        <label for="storename">name<span class="redStar">*</span></label>
+        <input type="text" id="storename" name="storename" value="" placeholder="Store name" list="stores">
+      </div>
+
+      <div class="splitIn3rds">
+        <div class="right">
+          <label for="price">price</label>
+          <input type="text" id="price" name="price" value="" placeholder="Item price">
+        </div>
+
+        <div class="right">
+          <label for="pamount">amount</label>
+          <input type="text" id="pamount" name="pamount" value="" placeholder="Amount">
+        </div>
+
+        <div class="right">
+          <label for="punit">unit</label>
+          <input type="text" id="punit" name="punit" value="" placeholder="Unit, (e.g. g)">
+        </div>
+      </div>
+
+      <div class="right">
+        <label for="paddress">address</label>
+        <div class="addPlus">
+          <input type="text" id="paddress" name="paddress" value="" placeholder="Store address if you are adding new store, or url to product page">
+
+          <span class="plus icons shrinkedIcon"></span>
+          {{!-- <span class="minus icons shrinkedIcon"></span> --}}
+        </div>
+      </div>
+    </fieldset>
+  {{/if}}
+  
+{{/eq}}

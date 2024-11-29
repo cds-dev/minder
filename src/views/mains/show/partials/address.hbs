@@ -1,0 +1,10 @@
+{{#eq dom 'store'}}
+  <div>
+    {{#each data.bus}}
+      <div class="bump box greenBorder">
+        <div>Address: {{address}}</div>
+        <div>Bus: {{line}}, Stop name: {{stop}}</div>
+      </div>
+    {{/each}}
+  </div>
+{{/eq}}

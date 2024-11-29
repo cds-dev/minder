@@ -1,0 +1,204 @@
+@use "../fonts/fonts" as f;
+@use "../general/colors" as c;
+@use "../general/mixins" as *;
+
+.bump {
+  margin-top: 2rem;
+}
+
+.homePage {
+  margin-top: 7rem;
+}
+
+.notFound {
+  border: .3rem solid c.$pink;
+  padding: 2rem;
+  text-align: center;
+  color: c.$gold;
+  font-size: 2rem;
+  background: #dc143c1c;
+}
+
+.iconCard {
+  color: c.$gold;
+
+  &::before {
+    font-size: 11rem;
+    width: 11.9rem;
+    height: 11.9rem;
+  }
+}
+
+.mainPIcon {
+  font-family: f.$minder;
+  font-size: 15rem;
+}
+
+.hide {
+  display: none;
+}
+
+.closedMenu {
+  display: none;
+}
+
+.relativize {
+  position: relative;
+}
+
+.up {
+  position: relative;
+  z-index: 1;
+}
+
+.ahead {
+  color: c.$pink;
+  text-transform: capitalize;
+
+  a {
+    color: inherit;
+  }
+}
+
+section.topBorder {
+  border-top: solid;
+  margin-top: 7rem;
+  margin-bottom: 0rem;
+  border-image: linear-gradient(90deg, #1f1f35, #f2a61d 49%, #0b0b19 78%) 1;
+}
+
+section.topBorder:last-child {
+  margin-bottom: 7rem;
+}
+
+.bump6 {
+  margin-top: 6rem;
+}
+
+.madeIt {
+  background: c.$pink;
+  color: c.$gold;
+  
+  
+  width: 2rem;
+  height: 2rem;
+  border: solid 1px;
+
+  &:before {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -.5rem;
+  }
+}
+
+img {
+  color: c.$lazyLoad;
+}
+
+@media only screen and (min-width: 19rem) {
+  section.topBorder {
+    h2 {
+      margin-bottom: -3rem;
+    }
+  }
+}
+
+nav.submenu {
+  position: static;
+  margin-block: 3rem;
+  gap: 1rem;
+  row-gap: 4rem;
+
+  a {
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+
+  .box {
+    display: inline-block;
+    padding: .5rem;;
+  }
+}
+
+.iconImage {
+  display: inline-flex;
+  width: 3.2rem;
+  height: 3.2rem;
+  @include border;
+  border-color: c.$green;
+  border-width: .1rem;
+  padding: .5rem;
+
+}
+
+.iconImage.back {
+  padding: 0;
+  border: 0;
+}
+
+.splitInHalf {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // TODO: this gap was removed for something but is needed for modify pages...
+  column-gap: 1rem;
+  padding-bottom: 2rem;
+}
+
+.splitInRepeat {
+  display: grid;
+  grid-template-columns: 1fr 1fr 3rem;
+  gap: 1rem;
+}
+
+.splitIn3rds {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 1rem;
+}
+
+.right {
+  padding-right: 1rem;
+}
+
+label.strickenLabel {
+  text-decoration: line-through;
+}
+
+input[type="radio"]:checked + label.strickenLabel,
+input[type="radio"]:focus:checked + label.strickenLabel {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.quickAddDiary {
+  margin-bottom: 2rem;
+}
+
+
+button.icons {
+  background: transparent;
+  border: transparent;
+
+  &::before {
+    color: c.$gold;
+    height: 2rem;
+    transition: color 250ms;
+  }
+}
+
+
+button.icons:hover::before {
+  color: crimson;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
+  line-clamp: 10;
+  box-orient: vertical;
+}

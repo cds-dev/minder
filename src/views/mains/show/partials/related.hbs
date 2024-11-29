@@ -1,0 +1,88 @@
+{{#eq dom 'recipe ingredient chef'}}
+<section class="topBorder relatedBox">
+  {{#if data.related}}
+    <h2>Related {{dom}}s:</h2>
+    <div class="relatedItems">
+      {{#each data.related}}
+        {{#eq category 'sub'}}
+          <div class="item">
+            <a href="/show/{{../dom}}/{{item._id}}">
+              <img src="{{item/picture}}" alt="{{item.name}}" title="{{item.name}}" style="width: 8rem; height: 8rem">
+              <span class="itemName hide" loading="lazy">
+                {{item.name}}
+              </span>
+            </a>
+          </div>
+        {{/eq}}
+      {{!-- {{/each}}
+
+      {{#each data.related}} --}}
+        {{#eq category 'variant'}}
+          <div class="item">
+          {{#eq category 'pair'}}pair{{/eq}}
+            <a href="/show/{{../dom}}/{{item._id}}">
+              <img src="{{item/picture}}" alt="{{item.name}}" title="{{item.name}}" style="width: 8rem; height: 8rem" loading="lazy">
+              <span class="itemName hide">
+                {{item.name}}
+              </span>
+            </a>
+          </div>
+        {{/eq}}
+      {{!-- {{/each}}
+
+      {{#each data.related}} --}}
+        {{#eq category 'pair'}}
+          <div class="item">
+            <a href="/show/{{../dom}}/{{item._id}}">
+              <img src="{{item/picture}}" alt="{{item.name}}" title="{{item.name}}" style="width: 8rem; height: 8rem" loading="lazy">
+              <span class="itemName hide">
+                {{item.name}}
+              </span>
+            </a>
+          </div>
+        {{/eq}}
+      {{!-- {{/each}}
+
+      {{#each data.related}} --}}
+        {{#eq category 'substitute'}}
+          <div class="item">
+            <a href="/show/{{../dom}}/{{item._id}}">
+              <img src="{{item/picture}}" alt="{{item.name}}" title="{{item.name}}" style="width: 8rem; height: 8rem" loading="lazy">
+              <span class="itemName hide">
+                {{item.name}}
+              </span>
+            </a>
+          </div>
+        {{/eq}}
+      {{!-- {{/each}}
+
+      {{#each data.related}} --}}
+        {{#eq category 'related'}}
+          <div class="item">
+            <a href="{{item._id}}">
+              <img src="{{item/picture}}" alt="{{item.name}}" title="{{item.name}}" style="width: 8rem; height: 8rem" loading="lazy">
+              <span class="itemName hide">
+                {{item.name}}
+              </span>
+            </a>
+          </div>
+        {{/eq}}
+
+
+        {{#eq category 'colleague'}}
+          <div class="item">
+            <a href="{{item._id}}">
+              <img src="{{item/picture}}" alt="{{item.name}}" title="{{item.name}}" style="width: 8rem; height: 8rem" loading="lazy">
+              <span class="itemName hide">
+                {{item.name}}
+              </span>
+            </a>
+          </div>
+        {{/eq}}
+      {{/each}}
+    </div>
+  {{/if}}
+</section>
+{{/eq}}
+
+{{!-- {{#unless @last}}<span class="">, {{/unless}} --}}

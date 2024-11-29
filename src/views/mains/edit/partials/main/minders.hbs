@@ -1,0 +1,19 @@
+<div class="right">
+  <label for="location">location</label>
+  <input type="text" name="location" id="location" list="places">
+</div>
+
+<div class="right relativize">
+  <label for="">Tone</label>
+  <input type="text" name="" id="audio" value="{{data.minder.audio}}">
+  <div class="fileButtons">
+    <button id="recordAudio" type="button" class="icons audio"></button>
+    <input type="file" name="uploadAudio" id="uploadAudio">
+    <button id="uploadAudio" type="button" class="icons upload"></button>
+  </div>
+</div>
+
+{{!-- the use of two input fields is cause
+[type="file"] isn't editable by user, and
+[type="text"] doesn't allow uploads,
+and both are needed --}}

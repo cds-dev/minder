@@ -1,0 +1,39 @@
+@use "../fonts/fonts" as f;
+@use "../general/colors" as c;
+@use "../general/mixins" as *;
+
+body:has(.mydiary) .jumpTo { // hide "top" button on mydiary page
+  display: none;
+}
+
+.mydiary {
+  .fooddiary {
+    position: relative;
+    margin-bottom: 4rem;
+
+    fieldset {
+      border: solid .1rem;
+      border-radius: .3rem;
+      padding-top: 1.6rem;
+      padding-right: 7rem;
+
+      input {
+        position: relative;
+        top: -.5rem;
+        margin-right: 1rem;
+      }
+    }
+
+    .piggyBtn {
+      position: absolute;
+      right: 2rem;
+      top: 0;
+
+      &::before {
+        background: c.$lazyLoad;
+        border-block: none;
+        border-radius: 0;
+      }
+    }
+  }
+}

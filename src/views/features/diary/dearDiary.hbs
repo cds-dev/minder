@@ -1,0 +1,13 @@
+<form class="qdiary diaryForm" action="/diary/submit/diary" method="post">
+  <fieldset class="pinkBorder box">
+    <legend class="pinkBorder">Dear diary</legend>
+    <textarea name="entry" id="entry"></textarea>
+
+    <input type="radio" name="diary" id="diary" checked="">
+    <label for="diary" class="strickenLabel nAfter">Diary</label>
+    <input type="radio" name="diary" id="story">
+    <label for="story" class="strickenLabel nAfter">Story</label>
+
+    <input type="submit" value="Save">
+  </fieldset>
+</form>

@@ -1,0 +1,31 @@
+{{#ne dom 'diary'}}
+<div class="listAllContainer">
+  <table class="listAllTable">
+    <tbody>
+      {{#each data}}
+        <tr class="listItem">
+          <td onclick="window.location='/{{../dom}}/show/{{_id}}'">{{#if rotation}}&#10004;{{/if}} {{number}}</td>
+
+          {{#ne ../dom 'kanban'}}
+          <td>
+            <a href="/{{../dom}}/show/{{_id}}" class="spread">
+              <img src="{{picture}}" alt="{{name}}">
+            </a>
+          </td>
+          {{/ne}}
+
+          {{#eq ../dom 'kanban'}}
+          <td>
+            <a href="/{{../dom}}/show/{{_id}}">
+              <span class="icons {{picture}}"></span>
+            </a>
+          </td>
+          {{/eq}}
+
+          <td onclick="window.location='/{{../dom}}/show/{{_id}}'">{{name}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+{{/ne}}

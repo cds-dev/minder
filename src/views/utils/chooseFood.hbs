@@ -1,0 +1,22 @@
+<div class="switcherBox bump" data-dom="recipe">
+  <div class="recipeSpinner">
+    <nav class="diceWrapper">
+      {{!-- <a title="spin the cookbook"> --}}
+        <button type="button" class="icons dice" title="spin the cookbook"></button>
+      {{!-- </a> --}}
+    </nav>
+    {{#times 3}}
+      <div class="singleChoice">
+        <a href="/show/recipe/{{_id}}">
+          <img src="{{picture}}" alt="{{name}}">
+          <div class="itemName">{{name}}</div>
+          <div class="number">{{number}}</div>
+          <div class="cookPic"><img src="" alt=""></div>
+        </a>
+      </div>
+    {{/times}}
+  </div>
+</div>
+
+{{!-- changed span into button and added type button
+added title and hid the anchor --}}
